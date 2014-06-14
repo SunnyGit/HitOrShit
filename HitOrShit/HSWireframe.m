@@ -26,25 +26,8 @@
     self = [super init];
     if (self) {
         _window = window;
-       // _storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-       // _window.rootViewController = [self moviesListNavigationController];
     }
     return self;
-}
-
-- (UINavigationController *)moviesListNavigationController {
-    if (_moviesListNavigationController == nil) {
-        _moviesListNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"HSNavigationController"];
-        HSMoviesListViewController *moviesListViewController = (HSMoviesListViewController *)[_moviesListNavigationController topViewController];
-        HSMoviesListInteractor *interactor = [[HSMoviesListInteractor alloc] init];
-        HSMoviesListPresenter *presenter = [[HSMoviesListPresenter alloc] init];
-        moviesListViewController.presenter = presenter;
-        presenter.viewController = moviesListViewController;
-       // presenter.interactor = interactor;
-        interactor.presenter = presenter;
-        presenter.wireframe = self;
-    }
-    return _moviesListNavigationController;
 }
 
 @end
