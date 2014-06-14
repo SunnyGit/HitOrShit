@@ -10,7 +10,7 @@
 
 #import "HSMoviesListCell.h"
 
-static CGFloat const kListTableViewCellHeight = 160.0f;
+static CGFloat const kListTableViewCellHeight = 190.0f;
 static CGFloat const kSampleNumberOfRows = 15.0f;
 
 @interface HSMoviesListViewController ()
@@ -25,6 +25,7 @@ static CGFloat const kSampleNumberOfRows = 15.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCells];
+    self.movieListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)registerCells {
@@ -47,9 +48,7 @@ static CGFloat const kSampleNumberOfRows = 15.0f;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HSMoviesListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HSMoviesListCell class])
-                                                             forIndexPath:indexPath];
-    cell.separatorInset = UIEdgeInsetsZero;
-    
+                                                             forIndexPath:indexPath];    
     if (indexPath.row == 0) {
         cell.movieName = @"Hrudaya Kalayam";
         cell.movieBannerImage = [UIImage imageNamed:@"hrudayaKalayam.png"];
