@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 #import "HSWireframe.h"
-#import "HSMoviesListTableViewController.h"
+#import "HSMoviesListViewController.h"
 #import "HSMoviesListInteractor.h"
 
 @interface HSMoviesListPresenter : NSObject
 
 @property (nonatomic, weak) HSWireframe *wireframe;
-@property (nonatomic, weak) HSMoviesListTableViewController *viewController;
-@property (nonatomic, strong) id<HSMoviesListInteractorInteraction> interactor;
+@property (nonatomic, weak) HSMoviesListViewController *viewController;
+//@property (nonatomic, strong) id<HSMoviesListInteractorInteraction> interactor;
 
 @end

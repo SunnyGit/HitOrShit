@@ -18,9 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.wireframe = [[HSWireframe alloc] initWithWindow:self.window];
-    [self.window makeKeyAndVisible];
     return YES;
 }
 

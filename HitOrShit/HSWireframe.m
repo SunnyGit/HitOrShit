@@ -8,7 +8,7 @@
 
 #import "HSWireframe.h"
 
-#import "HSMoviesListTableViewController.h"
+#import "HSMoviesListViewController.h"
 #import "HSMoviesListPresenter.h"
 #import "HSMoviesListInteractor.h"
 
@@ -26,8 +26,8 @@
     self = [super init];
     if (self) {
         _window = window;
-        _storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        _window.rootViewController = [self moviesListNavigationController];
+       // _storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+       // _window.rootViewController = [self moviesListNavigationController];
     }
     return self;
 }
@@ -35,12 +35,12 @@
 - (UINavigationController *)moviesListNavigationController {
     if (_moviesListNavigationController == nil) {
         _moviesListNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"HSNavigationController"];
-        HSMoviesListTableViewController *moviesListViewController = (HSMoviesListTableViewController *)[_moviesListNavigationController topViewController];
+        HSMoviesListViewController *moviesListViewController = (HSMoviesListViewController *)[_moviesListNavigationController topViewController];
         HSMoviesListInteractor *interactor = [[HSMoviesListInteractor alloc] init];
         HSMoviesListPresenter *presenter = [[HSMoviesListPresenter alloc] init];
         moviesListViewController.presenter = presenter;
         presenter.viewController = moviesListViewController;
-        presenter.interactor = interactor;
+       // presenter.interactor = interactor;
         interactor.presenter = presenter;
         presenter.wireframe = self;
     }

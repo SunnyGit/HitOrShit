@@ -10,7 +10,7 @@
 
 @class HSMoviesListPresenter;
 
-@interface HSMoviesListTableViewController : UITableViewController
+@interface HSMoviesListViewController : UIViewController
 
 @property (strong, nonatomic) HSMoviesListPresenter *presenter;
 
