@@ -15,8 +15,6 @@
 @interface HSWireframe ()
 
 @property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) UIStoryboard *storyboard;
-@property (nonatomic, strong) UINavigationController *moviesListNavigationController;
 
 @end
 
