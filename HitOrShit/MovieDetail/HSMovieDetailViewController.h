@@ -1,5 +1,5 @@
 //
-//  HSMoviesListCell.h
+//  HSMovieDetailViewController.h
 //  HitOrShit
 //
 //  Created by Sunil Gandham on 6/15/14.
@@ -10,8 +10,8 @@
 
 @class HSMovieListData;
 
-@interface HSMoviesListCell : UITableViewCell
+@interface HSMovieDetailViewController : UIViewController
 
-@property (nonatomic, strong) HSMovieListData *movieListData;
+@property (nonatomic, strong) HSMovieListData *movieData;
 
 @end

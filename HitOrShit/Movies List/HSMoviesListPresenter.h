@@ -12,10 +12,15 @@
 #import "HSMoviesListViewController.h"
 #import "HSMoviesListInteractor.h"
 
+@protocol HSMoviesListInteractorInteraction;
+
 @interface HSMoviesListPresenter : NSObject
 
 @property (nonatomic, weak) HSWireframe *wireframe;
 @property (nonatomic, weak) HSMoviesListViewController *viewController;
-//@property (nonatomic, strong) id<HSMoviesListInteractorInteraction> interactor;
+@property (nonatomic, strong) id<HSMoviesListInteractorInteraction> interactor;
+
+- (void)fecthMovieListDataWitSuccess:(void(^)(NSArray *movieListData))completion
+                      andWithFailure:(void(^)(NSError *error))failure;
 
 @end

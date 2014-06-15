@@ -12,6 +12,9 @@
 
 @protocol HSMoviesListInteractorInteraction <NSObject>
 
+- (void)fecthMovieListDataWitSuccess:(void(^)(NSArray *movieListData))completion
+                      andWithFailure:(void(^)(NSError *error))failure;
+
 @end
 
 @interface HSMoviesListInteractor : NSObject<HSMoviesListInteractorInteraction>

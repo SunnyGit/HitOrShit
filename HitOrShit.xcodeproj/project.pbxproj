@@ -27,9 +27,8 @@
 		4834318C194C7E30002CD868 /* HSMoviesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4834318B194C7E30002CD868 /* HSMoviesListPresenter.m */; };
 		4834318F194C7E48002CD868 /* HSMoviesListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4834318E194C7E48002CD868 /* HSMoviesListInteractor.m */; };
 		91670E8A194CD1610060C1F5 /* HSMoviesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91670E89194CD1610060C1F5 /* HSMoviesListCell.m */; };
-		91670ED3194CDB090060C1F5 /* hrudayaKalayam.png in Resources */ = {isa = PBXBuildFile; fileRef = 91670ED0194CDB090060C1F5 /* hrudayaKalayam.png */; };
-		91670ED4194CDB090060C1F5 /* manam.png in Resources */ = {isa = PBXBuildFile; fileRef = 91670ED1194CDB090060C1F5 /* manam.png */; };
-		91670ED5194CDB090060C1F5 /* Raid2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91670ED2194CDB090060C1F5 /* Raid2.png */; };
+		91670EDC194CEB600060C1F5 /* HSMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91670EDB194CEB600060C1F5 /* HSMovieDetailViewController.m */; };
+		91670EDF194CEC3D0060C1F5 /* HSMovieListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 91670EDE194CEC3D0060C1F5 /* HSMovieListData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,9 +72,10 @@
 		4834318E194C7E48002CD868 /* HSMoviesListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListInteractor.m; sourceTree = "<group>"; };
 		91670E88194CD1610060C1F5 /* HSMoviesListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListCell.h; sourceTree = "<group>"; };
 		91670E89194CD1610060C1F5 /* HSMoviesListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListCell.m; sourceTree = "<group>"; };
-		91670ED0194CDB090060C1F5 /* hrudayaKalayam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hrudayaKalayam.png; sourceTree = "<group>"; };
-		91670ED1194CDB090060C1F5 /* manam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manam.png; sourceTree = "<group>"; };
-		91670ED2194CDB090060C1F5 /* Raid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Raid2.png; sourceTree = "<group>"; };
+		91670EDA194CEB600060C1F5 /* HSMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailViewController.h; sourceTree = "<group>"; };
+		91670EDB194CEB600060C1F5 /* HSMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailViewController.m; sourceTree = "<group>"; };
+		91670EDD194CEC3D0060C1F5 /* HSMovieListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieListData.h; sourceTree = "<group>"; };
+		91670EDE194CEC3D0060C1F5 /* HSMovieListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieListData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +142,7 @@
 				48343159194C7838002CD868 /* Main_iPad.storyboard */,
 				48343180194C7B29002CD868 /* HSWireframe.h */,
 				48343181194C7B29002CD868 /* HSWireframe.m */,
+				91670ED9194CEB600060C1F5 /* MovieDetail */,
 				48343186194C7DFF002CD868 /* Movies List */,
 				4834315F194C7838002CD868 /* HSDetailViewController.h */,
 				48343160194C7838002CD868 /* HSDetailViewController.m */,
@@ -191,6 +192,8 @@
 				4834318E194C7E48002CD868 /* HSMoviesListInteractor.m */,
 				91670E88194CD1610060C1F5 /* HSMoviesListCell.h */,
 				91670E89194CD1610060C1F5 /* HSMoviesListCell.m */,
+				91670EDD194CEC3D0060C1F5 /* HSMovieListData.h */,
+				91670EDE194CEC3D0060C1F5 /* HSMovieListData.m */,
 			);
 			path = "Movies List";
 			sourceTree = "<group>";
@@ -198,11 +201,17 @@
 		91670ECF194CDB090060C1F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				91670ED0194CDB090060C1F5 /* hrudayaKalayam.png */,
-				91670ED1194CDB090060C1F5 /* manam.png */,
-				91670ED2194CDB090060C1F5 /* Raid2.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		91670ED9194CEB600060C1F5 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				91670EDA194CEB600060C1F5 /* HSMovieDetailViewController.h */,
+				91670EDB194CEB600060C1F5 /* HSMovieDetailViewController.m */,
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +291,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91670ED4194CDB090060C1F5 /* manam.png in Resources */,
-				91670ED5194CDB090060C1F5 /* Raid2.png in Resources */,
-				91670ED3194CDB090060C1F5 /* hrudayaKalayam.png in Resources */,
 				4834315B194C7838002CD868 /* Main_iPad.storyboard in Resources */,
 				48343163194C7838002CD868 /* Images.xcassets in Resources */,
 				48343158194C7838002CD868 /* Main_iPhone.storyboard in Resources */,
@@ -310,9 +316,11 @@
 				4834318F194C7E48002CD868 /* HSMoviesListInteractor.m in Sources */,
 				48343161194C7838002CD868 /* HSDetailViewController.m in Sources */,
 				48343182194C7B29002CD868 /* HSWireframe.m in Sources */,
+				91670EDF194CEC3D0060C1F5 /* HSMovieListData.m in Sources */,
 				4834318C194C7E30002CD868 /* HSMoviesListPresenter.m in Sources */,
 				48343151194C7838002CD868 /* main.m in Sources */,
 				48343189194C7DFF002CD868 /* HSMoviesListViewController.m in Sources */,
+				91670EDC194CEB600060C1F5 /* HSMovieDetailViewController.m in Sources */,
 				48343155194C7838002CD868 /* HSAppDelegate.m in Sources */,
 				91670E8A194CD1610060C1F5 /* HSMoviesListCell.m in Sources */,
 			);

@@ -10,4 +10,12 @@
 
 @implementation HSMoviesListInteractor
 
+- (void)fecthMovieListDataWitSuccess:(void(^)(NSArray *movieListData))completion
+                      andWithFailure:(void(^)(NSError *error))failure {
+    // TODO This will always call success block
+    if (completion) {
+        completion([[NSArray alloc] initWithObjects:@"Sample1",@"Sample2",@"Sample3", nil]);
+    }
+}
+
 @end

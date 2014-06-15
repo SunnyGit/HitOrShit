@@ -8,6 +8,8 @@
 
 #import "HSMoviesListCell.h"
 
+#import "HSMovieListData.h"
+
 @interface HSMoviesListCell ()
 
 @property (nonatomic, strong) UIImageView *movieBannerImageView;
@@ -40,10 +42,8 @@
 
 - (void)setupContainerView {
     self.contentContainerView = [[UIView alloc] init];
-    self.contentContainerView.backgroundColor = [UIColor colorWithRed:240.0/255.0
-                                                                green:240.0/255.0
-                                                                 blue:240.0/255.0
-                                                                alpha:1.0];
+    self.contentContainerView.backgroundColor = [UIColor colorWithWhite:240.0f
+                                                                  alpha:1.0f];
     self.contentContainerView.layer.masksToBounds = NO;
     self.contentContainerView.layer.cornerRadius = 3;
     self.contentContainerView.layer.shadowRadius = 2;
@@ -157,14 +157,10 @@
 
 #pragma mark Setter Methods
 
-- (void)setMovieBannerImage:(UIImage *)movieBannerImage {
-    _movieBannerImage = movieBannerImage;
-    self.movieBannerImageView.image = movieBannerImage;
-}
-
-- (void)setMovieName:(NSString *)movieName {
-    _movieName = movieName;
-    self.titleLabel.text = movieName;
+- (void)setMovieListData:(HSMovieListData *)movieListData {
+    _movieListData = movieListData;
+    self.movieBannerImageView.image = movieListData.movieBannerImage;
+    self.titleLabel.text = movieListData.movieName;
 }
 
 @end
