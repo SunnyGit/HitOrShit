@@ -12,4 +12,8 @@
 
 - (instancetype)initWithWindow:(UIWindow *)window;
 
+- (void)showLoginScreenWithAnimation:(BOOL)animate;
+
+- (void)loginWithFacebook;
+
 @end

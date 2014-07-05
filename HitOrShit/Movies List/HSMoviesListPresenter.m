@@ -9,18 +9,25 @@
 #import "HSMoviesListPresenter.h"
 
 #import "HSMovieListData.h"
+#import "HSAuthorisation.h"
 
 @implementation HSMoviesListPresenter
 
 - (void)fecthMovieListDataWitSuccess:(void(^)(NSArray *movieListData))completion
                       andWithFailure:(void(^)(NSError *error))failure {
-    [self.interactor fecthMovieListDataWitSuccess:^(NSArray *movieListData) {
-        NSArray *movieArray = [self prepareMovieListDataForView:movieListData];
-        if (completion) {
-            completion(movieArray);
+    [HSAuthorisation requestForAuthorisationAccess:^(BOOL granted) {
+        if (granted) {
+            [self.interactor fecthMovieListDataWitSuccess:^(NSArray *movieListData) {
+                NSArray *movieArray = [self prepareMovieListDataForView:movieListData];
+                if (completion) {
+                    completion(movieArray);
+                }
+            } andWithFailure:^(NSError *error) {
+                // TODO Handle the error block
+            }];
+        } else {
+            [self.wireframe showLoginScreenWithAnimation:NO];
         }
-    } andWithFailure:^(NSError *error) {
-        // TODO Handle the error block
     }];
 }
 

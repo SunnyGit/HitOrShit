@@ -29,6 +29,10 @@ static CGFloat const kListTableViewCellHeight = 190.0f;
     [super viewDidLoad];
     [self registerCells];
     self.movieListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self fetchListData];
 }
 
