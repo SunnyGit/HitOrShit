@@ -46,6 +46,7 @@
     listData.movieName = movie.title;
     listData.movieId = movie.movie_id;
     listData.moviePosterLink = movie.moviePoster;
+    listData.movieGenre = movie.genre;
     return listData;
 }
 

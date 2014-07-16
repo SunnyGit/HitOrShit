@@ -16,4 +16,6 @@
 
 @property (nonatomic, copy) NSString *movieId;
 
+@property (nonatomic, copy) NSString *movieGenre;
+
 @end

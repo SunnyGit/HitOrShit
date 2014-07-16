@@ -10,7 +10,7 @@
 
 @class HSMovieListData;
 
-@interface HSMoviesListCell : UITableViewCell
+@interface HSMoviesListCell : UICollectionViewCell
 
 @property (nonatomic, strong) HSMovieListData *movieListData;
 

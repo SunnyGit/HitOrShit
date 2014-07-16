@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Mogenrator.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>48343167194C7838002CD868</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>915FDD161968832B00B8F173</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -37,6 +37,7 @@
 		48343174194C7838002CD868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48343172194C7838002CD868 /* InfoPlist.strings */; };
 		48343176194C7838002CD868 /* HitOrShitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48343175194C7838002CD868 /* HitOrShitTests.m */; };
 		48343182194C7B29002CD868 /* HSWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 48343181194C7B29002CD868 /* HSWireframe.m */; };
+		48AC97231977240000707A66 /* HSMovieStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AC97221977240000707A66 /* HSMovieStarRatingView.m */; };
 		48FFC3D21957210900AEA698 /* HSAuthorisation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFC3D11957210900AEA698 /* HSAuthorisation.m */; };
 		912EB4CA1975B87B00352726 /* HOSMovies.m in Sources */ = {isa = PBXBuildFile; fileRef = 912EB4C91975B87B00352726 /* HOSMovies.m */; };
 		912EB4CD1975B88900352726 /* _HOSMovies.m in Sources */ = {isa = PBXBuildFile; fileRef = 912EB4CC1975B88900352726 /* _HOSMovies.m */; };
@@ -92,6 +93,8 @@
 		48343175194C7838002CD868 /* HitOrShitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitOrShitTests.m; sourceTree = "<group>"; };
 		48343180194C7B29002CD868 /* HSWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSWireframe.h; sourceTree = "<group>"; };
 		48343181194C7B29002CD868 /* HSWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSWireframe.m; sourceTree = "<group>"; };
+		48AC97211977240000707A66 /* HSMovieStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieStarRatingView.h; sourceTree = "<group>"; };
+		48AC97221977240000707A66 /* HSMovieStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieStarRatingView.m; sourceTree = "<group>"; };
 		48FFC3D01957210900AEA698 /* HSAuthorisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAuthorisation.h; sourceTree = "<group>"; };
 		48FFC3D11957210900AEA698 /* HSAuthorisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAuthorisation.m; sourceTree = "<group>"; };
 		912EB4C81975B87B00352726 /* HOSMovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSMovies.h; sourceTree = "<group>"; };
@@ -326,6 +329,8 @@
 		915FDD371969CF1B00B8F173 /* Movies List */ = {
 			isa = PBXGroup;
 			children = (
+				48AC97211977240000707A66 /* HSMovieStarRatingView.h */,
+				48AC97221977240000707A66 /* HSMovieStarRatingView.m */,
 				915FDD381969CF1B00B8F173 /* HSMovieListData.h */,
 				915FDD391969CF1B00B8F173 /* HSMovieListData.m */,
 				915FDD3A1969CF1B00B8F173 /* HSMoviesListCell.h */,
@@ -506,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AC97231977240000707A66 /* HSMovieStarRatingView.m in Sources */,
 				915FDD4B1969CF1B00B8F173 /* HSMoviesListViewController.m in Sources */,
 				915FDD461969CF1B00B8F173 /* HSMovieDetailViewController.m in Sources */,
 				915FDD2219688AAC00B8F173 /* HOSRegister.m in Sources */,

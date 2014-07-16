@@ -13,11 +13,9 @@
 #import "HSMoviesListPresenter.h"
 #import "HSMovieDetailViewController.h"
 
-static CGFloat const kListTableViewCellHeight = 190.0f;
-
 @interface HSMoviesListViewController ()
 
-@property (strong, nonatomic) IBOutlet UITableView *movieListTableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *moviesListCollectionView;
 @property (nonatomic, copy) NSArray *movieListCollection;
 
 @end
@@ -28,7 +26,12 @@ static CGFloat const kListTableViewCellHeight = 190.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCells];
-    self.movieListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.itemSize = CGSizeMake(151, 250);
+    flowLayout.minimumLineSpacing = 6.0;
+    flowLayout.minimumInteritemSpacing = 6.0;
+    flowLayout.sectionInset = UIEdgeInsetsMake(6.0, 6.0, 6.0, 6.0);
+    self.moviesListCollectionView.collectionViewLayout = flowLayout;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -37,8 +40,7 @@ static CGFloat const kListTableViewCellHeight = 190.0f;
 }
 
 - (void)registerCells {
-    [self.movieListTableView registerClass:[HSMoviesListCell class]
-                    forCellReuseIdentifier:NSStringFromClass([HSMoviesListCell class])];
+    [self.moviesListCollectionView registerClass:[HSMoviesListCell class] forCellWithReuseIdentifier:NSStringFromClass([HSMoviesListCell class])];
 }
 
 - (void)fetchListData {
@@ -52,30 +54,25 @@ static CGFloat const kListTableViewCellHeight = 190.0f;
 
 - (void)setMovieListCollection:(NSArray *)movieListCollection {
     _movieListCollection = movieListCollection;
-    [self.movieListTableView reloadData];
+    [self.moviesListCollectionView reloadData];
 }
 
 
 #pragma mark Delegate Methods
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kListTableViewCellHeight;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"DetailView" sender:self];
 }
 
 
 #pragma mark DataSource Methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectio {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.movieListCollection count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HSMoviesListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HSMoviesListCell class])
-                                                             forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    HSMoviesListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HSMoviesListCell class]) forIndexPath:indexPath];
     
     HSMovieListData *listData = [self.movieListCollection objectAtIndex:indexPath.row];
     cell.movieListData = listData;
@@ -86,7 +83,8 @@ static CGFloat const kListTableViewCellHeight = 190.0f;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     HSMovieDetailViewController *detailListViewController = segue.destinationViewController;
-    detailListViewController.movieData = [self.movieListCollection objectAtIndex:[self.movieListTableView indexPathForSelectedRow].row];
+    NSIndexPath *selectedIndexPath = [[self.moviesListCollectionView indexPathsForSelectedItems] firstObject];
+    detailListViewController.movieData = [self.movieListCollection objectAtIndex:selectedIndexPath.item];
 }
 
 @end
