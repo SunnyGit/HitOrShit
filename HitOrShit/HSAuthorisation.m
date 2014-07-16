@@ -9,6 +9,7 @@
 #import "HSAuthorisation.h"
 
 #import <FacebookSDK/FacebookSDK.h>
+#import "HOSFBDetails.h"
 
 NSString * const kAuthorisationTypeKey = @"authorisationType";
 
@@ -73,7 +74,7 @@ typedef NS_ENUM(NSInteger, authorisationType) {
          completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
              if (error == nil) {
                  completionHandler(YES);
-                 [self fetchUserDetailsWith:session];
+                 [self fetchUserDetailsWith:session withCompletionBlock:nil];
              } else {
                  completionHandler(NO);
              }
@@ -83,11 +84,29 @@ typedef NS_ENUM(NSInteger, authorisationType) {
     }
 }
 
-+ (void)fetchUserDetailsWith:(FBSession *)session {
++ (void)fetchUserDetailsWith:(FBSession *)session withCompletionBlock:(void (^)(void))completion {
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
     FBRequest *request = [FBRequest requestForMe];
     request.session =session;
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         NSLog(@" result : %@, error : %@",result,error);
+        HOSFBDetails *fbDetails = [HOSFBDetails MR_findFirstByAttribute:HOSFBDetailsAttributes.userid
+                                                              withValue:[result objectForKey:@"id"]];
+        if (fbDetails == nil) {
+            fbDetails = [HOSFBDetails MR_createEntity];
+            fbDetails.userid = [result objectForKey:@"id"];
+        }
+        fbDetails.firstName = [result objectForKey:@"first_name"];
+        fbDetails.lastName = [result objectForKey:@"last_name"];
+        fbDetails.email = [result objectForKey:@"email"];
+        fbDetails.profileLink = [result objectForKey:@"link"];
+        fbDetails.name = [result objectForKey:@"name"];
+
+        [context MR_saveOnlySelfAndWait];
+        
+        if (completion) {
+            completion();
+        }
         [self fetchFriendsDetailsWith:session];
     }];
 }
@@ -117,7 +136,9 @@ typedef NS_ENUM(NSInteger, authorisationType) {
 
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error {
     if (!error && state == FBSessionStateOpen) {
-        [self.delegate userLoggedIn];
+        [[self class] fetchUserDetailsWith:session withCompletionBlock:^{
+            [self.delegate userLoggedIn];
+        }];
         return;
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){

@@ -9,6 +9,7 @@
 #import "HSMoviesListCell.h"
 
 #import "HSMovieListData.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface HSMoviesListCell ()
 
@@ -159,7 +160,7 @@
 
 - (void)setMovieListData:(HSMovieListData *)movieListData {
     _movieListData = movieListData;
-    self.movieBannerImageView.image = movieListData.movieBannerImage;
+    [self.movieBannerImageView setImageWithURL:[NSURL URLWithString:movieListData.moviePosterLink]];
     self.titleLabel.text = movieListData.movieName;
 }
 

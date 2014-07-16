@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		915FDD161968832B00B8F173 /* Mogenrator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 915FDD171968832B00B8F173 /* Build configuration list for PBXAggregateTarget "Mogenrator" */;
+			buildPhases = (
+				915FDD1A1968833200B8F173 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenrator;
+			productName = Mogenrator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		215AD188C6FB44DA84A46F06 /* libPods-HitOrShit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C32C7BE5214E1A8C8FFA85 /* libPods-HitOrShit.a */; };
 		48343145194C7838002CD868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48343144194C7838002CD868 /* Foundation.framework */; };
@@ -16,7 +30,6 @@
 		48343155194C7838002CD868 /* HSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48343154194C7838002CD868 /* HSAppDelegate.m */; };
 		48343158194C7838002CD868 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48343156194C7838002CD868 /* Main_iPhone.storyboard */; };
 		4834315B194C7838002CD868 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48343159194C7838002CD868 /* Main_iPad.storyboard */; };
-		48343161194C7838002CD868 /* HSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48343160194C7838002CD868 /* HSDetailViewController.m */; };
 		48343163194C7838002CD868 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48343162194C7838002CD868 /* Images.xcassets */; };
 		4834316A194C7838002CD868 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48343169194C7838002CD868 /* XCTest.framework */; };
 		4834316B194C7838002CD868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48343144194C7838002CD868 /* Foundation.framework */; };
@@ -24,16 +37,27 @@
 		48343174194C7838002CD868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48343172194C7838002CD868 /* InfoPlist.strings */; };
 		48343176194C7838002CD868 /* HitOrShitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48343175194C7838002CD868 /* HitOrShitTests.m */; };
 		48343182194C7B29002CD868 /* HSWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 48343181194C7B29002CD868 /* HSWireframe.m */; };
-		48343189194C7DFF002CD868 /* HSMoviesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48343188194C7DFF002CD868 /* HSMoviesListViewController.m */; };
-		4834318C194C7E30002CD868 /* HSMoviesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4834318B194C7E30002CD868 /* HSMoviesListPresenter.m */; };
-		4834318F194C7E48002CD868 /* HSMoviesListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4834318E194C7E48002CD868 /* HSMoviesListInteractor.m */; };
 		48FFC3D21957210900AEA698 /* HSAuthorisation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFC3D11957210900AEA698 /* HSAuthorisation.m */; };
-		48FFC3D6195727B800AEA698 /* HSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFC3D5195727B800AEA698 /* HSLoginViewController.m */; };
-		48FFC3D9195727D200AEA698 /* HSLoginPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFC3D8195727D200AEA698 /* HSLoginPresenter.m */; };
-		48FFC3DC195727E100AEA698 /* HSLoginInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFC3DB195727E100AEA698 /* HSLoginInteractor.m */; };
-		91670E8A194CD1610060C1F5 /* HSMoviesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91670E89194CD1610060C1F5 /* HSMoviesListCell.m */; };
-		91670EDC194CEB600060C1F5 /* HSMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91670EDB194CEB600060C1F5 /* HSMovieDetailViewController.m */; };
-		91670EDF194CEC3D0060C1F5 /* HSMovieListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 91670EDE194CEC3D0060C1F5 /* HSMovieListData.m */; };
+		912EB4CA1975B87B00352726 /* HOSMovies.m in Sources */ = {isa = PBXBuildFile; fileRef = 912EB4C91975B87B00352726 /* HOSMovies.m */; };
+		912EB4CD1975B88900352726 /* _HOSMovies.m in Sources */ = {isa = PBXBuildFile; fileRef = 912EB4CC1975B88900352726 /* _HOSMovies.m */; };
+		915FDD121968824700B8F173 /* HitOrShit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD101968824700B8F173 /* HitOrShit.xcdatamodeld */; };
+		915FDD151968826400B8F173 /* HOSRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD141968826400B8F173 /* HOSRecord.m */; };
+		915FDD2219688AAC00B8F173 /* HOSRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD1E19688AAC00B8F173 /* HOSRegister.m */; };
+		915FDD2319688AAC00B8F173 /* _HOSRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2119688AAC00B8F173 /* _HOSRegister.m */; };
+		915FDD2619699D7800B8F173 /* HOSFBDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2519699D7800B8F173 /* HOSFBDetails.m */; };
+		915FDD2919699D8100B8F173 /* _HOSFBDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2819699D8100B8F173 /* _HOSFBDetails.m */; };
+		915FDD421969CF1B00B8F173 /* HSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2C1969CF1B00B8F173 /* HSDetailViewController.m */; };
+		915FDD431969CF1B00B8F173 /* HSLoginInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2F1969CF1B00B8F173 /* HSLoginInteractor.m */; };
+		915FDD441969CF1B00B8F173 /* HSLoginPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD311969CF1B00B8F173 /* HSLoginPresenter.m */; };
+		915FDD451969CF1B00B8F173 /* HSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD331969CF1B00B8F173 /* HSLoginViewController.m */; };
+		915FDD461969CF1B00B8F173 /* HSMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD361969CF1B00B8F173 /* HSMovieDetailViewController.m */; };
+		915FDD471969CF1B00B8F173 /* HSMovieListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD391969CF1B00B8F173 /* HSMovieListData.m */; };
+		915FDD481969CF1B00B8F173 /* HSMoviesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD3B1969CF1B00B8F173 /* HSMoviesListCell.m */; };
+		915FDD491969CF1B00B8F173 /* HSMoviesListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD3D1969CF1B00B8F173 /* HSMoviesListInteractor.m */; };
+		915FDD4A1969CF1B00B8F173 /* HSMoviesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD3F1969CF1B00B8F173 /* HSMoviesListPresenter.m */; };
+		915FDD4B1969CF1B00B8F173 /* HSMoviesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD411969CF1B00B8F173 /* HSMoviesListViewController.m */; };
+		915FDD4E1969CF4000B8F173 /* HSLiveServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD4D1969CF4000B8F173 /* HSLiveServer.m */; };
+		91BE96A4196DDC4300FAE6EE /* HOSLiveSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BE96A3196DDC4300FAE6EE /* HOSLiveSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +84,6 @@
 		48343154194C7838002CD868 /* HSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSAppDelegate.m; sourceTree = "<group>"; };
 		48343157194C7838002CD868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		4834315A194C7838002CD868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		4834315F194C7838002CD868 /* HSDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSDetailViewController.h; sourceTree = "<group>"; };
-		48343160194C7838002CD868 /* HSDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSDetailViewController.m; sourceTree = "<group>"; };
 		48343162194C7838002CD868 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		48343168194C7838002CD868 /* HitOrShitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HitOrShitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48343169194C7838002CD868 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -70,27 +92,48 @@
 		48343175194C7838002CD868 /* HitOrShitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitOrShitTests.m; sourceTree = "<group>"; };
 		48343180194C7B29002CD868 /* HSWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSWireframe.h; sourceTree = "<group>"; };
 		48343181194C7B29002CD868 /* HSWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSWireframe.m; sourceTree = "<group>"; };
-		48343187194C7DFF002CD868 /* HSMoviesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListViewController.h; sourceTree = "<group>"; };
-		48343188194C7DFF002CD868 /* HSMoviesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListViewController.m; sourceTree = "<group>"; };
-		4834318A194C7E30002CD868 /* HSMoviesListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListPresenter.h; sourceTree = "<group>"; };
-		4834318B194C7E30002CD868 /* HSMoviesListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListPresenter.m; sourceTree = "<group>"; };
-		4834318D194C7E48002CD868 /* HSMoviesListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListInteractor.h; sourceTree = "<group>"; };
-		4834318E194C7E48002CD868 /* HSMoviesListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListInteractor.m; sourceTree = "<group>"; };
 		48FFC3D01957210900AEA698 /* HSAuthorisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAuthorisation.h; sourceTree = "<group>"; };
 		48FFC3D11957210900AEA698 /* HSAuthorisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAuthorisation.m; sourceTree = "<group>"; };
-		48FFC3D4195727B800AEA698 /* HSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginViewController.h; sourceTree = "<group>"; };
-		48FFC3D5195727B800AEA698 /* HSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLoginViewController.m; sourceTree = "<group>"; };
-		48FFC3D7195727D200AEA698 /* HSLoginPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginPresenter.h; sourceTree = "<group>"; };
-		48FFC3D8195727D200AEA698 /* HSLoginPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLoginPresenter.m; sourceTree = "<group>"; };
-		48FFC3DA195727E100AEA698 /* HSLoginInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginInteractor.h; sourceTree = "<group>"; };
-		48FFC3DB195727E100AEA698 /* HSLoginInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLoginInteractor.m; sourceTree = "<group>"; };
-		91670E88194CD1610060C1F5 /* HSMoviesListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListCell.h; sourceTree = "<group>"; };
-		91670E89194CD1610060C1F5 /* HSMoviesListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListCell.m; sourceTree = "<group>"; };
-		91670EDA194CEB600060C1F5 /* HSMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailViewController.h; sourceTree = "<group>"; };
-		91670EDB194CEB600060C1F5 /* HSMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailViewController.m; sourceTree = "<group>"; };
-		91670EDD194CEC3D0060C1F5 /* HSMovieListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieListData.h; sourceTree = "<group>"; };
-		91670EDE194CEC3D0060C1F5 /* HSMovieListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieListData.m; sourceTree = "<group>"; };
+		912EB4C81975B87B00352726 /* HOSMovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSMovies.h; sourceTree = "<group>"; };
+		912EB4C91975B87B00352726 /* HOSMovies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSMovies.m; sourceTree = "<group>"; };
+		912EB4CB1975B88900352726 /* _HOSMovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HOSMovies.h; sourceTree = "<group>"; };
+		912EB4CC1975B88900352726 /* _HOSMovies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _HOSMovies.m; sourceTree = "<group>"; };
+		915FDD111968824700B8F173 /* HitOrShit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HitOrShit.xcdatamodel; sourceTree = "<group>"; };
+		915FDD131968826400B8F173 /* HOSRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSRecord.h; sourceTree = "<group>"; };
+		915FDD141968826400B8F173 /* HOSRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSRecord.m; sourceTree = "<group>"; };
+		915FDD1D19688AAC00B8F173 /* HOSRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSRegister.h; sourceTree = "<group>"; };
+		915FDD1E19688AAC00B8F173 /* HOSRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSRegister.m; sourceTree = "<group>"; };
+		915FDD2019688AAC00B8F173 /* _HOSRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HOSRegister.h; sourceTree = "<group>"; };
+		915FDD2119688AAC00B8F173 /* _HOSRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _HOSRegister.m; sourceTree = "<group>"; };
+		915FDD2419699D7800B8F173 /* HOSFBDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSFBDetails.h; sourceTree = "<group>"; };
+		915FDD2519699D7800B8F173 /* HOSFBDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSFBDetails.m; sourceTree = "<group>"; };
+		915FDD2719699D8100B8F173 /* _HOSFBDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HOSFBDetails.h; sourceTree = "<group>"; };
+		915FDD2819699D8100B8F173 /* _HOSFBDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _HOSFBDetails.m; sourceTree = "<group>"; };
+		915FDD2B1969CF1B00B8F173 /* HSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDetailViewController.h; sourceTree = "<group>"; };
+		915FDD2C1969CF1B00B8F173 /* HSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDetailViewController.m; sourceTree = "<group>"; };
+		915FDD2E1969CF1B00B8F173 /* HSLoginInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginInteractor.h; sourceTree = "<group>"; };
+		915FDD2F1969CF1B00B8F173 /* HSLoginInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLoginInteractor.m; sourceTree = "<group>"; };
+		915FDD301969CF1B00B8F173 /* HSLoginPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginPresenter.h; sourceTree = "<group>"; };
+		915FDD311969CF1B00B8F173 /* HSLoginPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLoginPresenter.m; sourceTree = "<group>"; };
+		915FDD321969CF1B00B8F173 /* HSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginViewController.h; sourceTree = "<group>"; };
+		915FDD331969CF1B00B8F173 /* HSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLoginViewController.m; sourceTree = "<group>"; };
+		915FDD351969CF1B00B8F173 /* HSMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailViewController.h; sourceTree = "<group>"; };
+		915FDD361969CF1B00B8F173 /* HSMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailViewController.m; sourceTree = "<group>"; };
+		915FDD381969CF1B00B8F173 /* HSMovieListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieListData.h; sourceTree = "<group>"; };
+		915FDD391969CF1B00B8F173 /* HSMovieListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieListData.m; sourceTree = "<group>"; };
+		915FDD3A1969CF1B00B8F173 /* HSMoviesListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListCell.h; sourceTree = "<group>"; };
+		915FDD3B1969CF1B00B8F173 /* HSMoviesListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListCell.m; sourceTree = "<group>"; };
+		915FDD3C1969CF1B00B8F173 /* HSMoviesListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListInteractor.h; sourceTree = "<group>"; };
+		915FDD3D1969CF1B00B8F173 /* HSMoviesListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListInteractor.m; sourceTree = "<group>"; };
+		915FDD3E1969CF1B00B8F173 /* HSMoviesListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListPresenter.h; sourceTree = "<group>"; };
+		915FDD3F1969CF1B00B8F173 /* HSMoviesListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListPresenter.m; sourceTree = "<group>"; };
+		915FDD401969CF1B00B8F173 /* HSMoviesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMoviesListViewController.h; sourceTree = "<group>"; };
+		915FDD411969CF1B00B8F173 /* HSMoviesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListViewController.m; sourceTree = "<group>"; };
+		915FDD4C1969CF4000B8F173 /* HSLiveServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLiveServer.h; sourceTree = "<group>"; };
+		915FDD4D1969CF4000B8F173 /* HSLiveServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLiveServer.m; sourceTree = "<group>"; };
 		919B4A7C8F9B4C16A2C783A8 /* Pods-HitOrShit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitOrShit.xcconfig"; path = "Pods/Pods-HitOrShit.xcconfig"; sourceTree = "<group>"; };
+		91BE96A2196DDC4300FAE6EE /* HOSLiveSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSLiveSessionManager.h; sourceTree = "<group>"; };
+		91BE96A3196DDC4300FAE6EE /* HOSLiveSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSLiveSessionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +196,9 @@
 		4834314A194C7838002CD868 /* HitOrShit */ = {
 			isa = PBXGroup;
 			children = (
+				91BE96A1196DDAA800FAE6EE /* Networking */,
+				915FDD2A1969CF1B00B8F173 /* Modules */,
+				915FDD0F1968824700B8F173 /* Model */,
 				91670ECF194CDB090060C1F5 /* Resources */,
 				48343153194C7838002CD868 /* HSAppDelegate.h */,
 				48343154194C7838002CD868 /* HSAppDelegate.m */,
@@ -162,11 +208,6 @@
 				48343181194C7B29002CD868 /* HSWireframe.m */,
 				48FFC3D01957210900AEA698 /* HSAuthorisation.h */,
 				48FFC3D11957210900AEA698 /* HSAuthorisation.m */,
-				48FFC3D31957279900AEA698 /* Login */,
-				91670ED9194CEB600060C1F5 /* MovieDetail */,
-				48343186194C7DFF002CD868 /* Movies List */,
-				4834315F194C7838002CD868 /* HSDetailViewController.h */,
-				48343160194C7838002CD868 /* HSDetailViewController.m */,
 				48343162194C7838002CD868 /* Images.xcassets */,
 				4834314B194C7838002CD868 /* Supporting Files */,
 			);
@@ -202,34 +243,101 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		48343186194C7DFF002CD868 /* Movies List */ = {
+		915FDD0F1968824700B8F173 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				48343187194C7DFF002CD868 /* HSMoviesListViewController.h */,
-				48343188194C7DFF002CD868 /* HSMoviesListViewController.m */,
-				4834318A194C7E30002CD868 /* HSMoviesListPresenter.h */,
-				4834318B194C7E30002CD868 /* HSMoviesListPresenter.m */,
-				4834318D194C7E48002CD868 /* HSMoviesListInteractor.h */,
-				4834318E194C7E48002CD868 /* HSMoviesListInteractor.m */,
-				91670E88194CD1610060C1F5 /* HSMoviesListCell.h */,
-				91670E89194CD1610060C1F5 /* HSMoviesListCell.m */,
-				91670EDD194CEC3D0060C1F5 /* HSMovieListData.h */,
-				91670EDE194CEC3D0060C1F5 /* HSMovieListData.m */,
+				915FDD1B196883D500B8F173 /* DataModel */,
+				915FDD101968824700B8F173 /* HitOrShit.xcdatamodeld */,
+				915FDD131968826400B8F173 /* HOSRecord.h */,
+				915FDD141968826400B8F173 /* HOSRecord.m */,
 			);
-			path = "Movies List";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		48FFC3D31957279900AEA698 /* Login */ = {
+		915FDD1B196883D500B8F173 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				48FFC3D4195727B800AEA698 /* HSLoginViewController.h */,
-				48FFC3D5195727B800AEA698 /* HSLoginViewController.m */,
-				48FFC3D7195727D200AEA698 /* HSLoginPresenter.h */,
-				48FFC3D8195727D200AEA698 /* HSLoginPresenter.m */,
-				48FFC3DA195727E100AEA698 /* HSLoginInteractor.h */,
-				48FFC3DB195727E100AEA698 /* HSLoginInteractor.m */,
+				915FDD1C19688AAC00B8F173 /* Human */,
+				915FDD1F19688AAC00B8F173 /* Machine */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		915FDD1C19688AAC00B8F173 /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				912EB4C81975B87B00352726 /* HOSMovies.h */,
+				912EB4C91975B87B00352726 /* HOSMovies.m */,
+				915FDD2419699D7800B8F173 /* HOSFBDetails.h */,
+				915FDD2519699D7800B8F173 /* HOSFBDetails.m */,
+				915FDD1D19688AAC00B8F173 /* HOSRegister.h */,
+				915FDD1E19688AAC00B8F173 /* HOSRegister.m */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		915FDD1F19688AAC00B8F173 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				912EB4CB1975B88900352726 /* _HOSMovies.h */,
+				912EB4CC1975B88900352726 /* _HOSMovies.m */,
+				915FDD2719699D8100B8F173 /* _HOSFBDetails.h */,
+				915FDD2819699D8100B8F173 /* _HOSFBDetails.m */,
+				915FDD2019688AAC00B8F173 /* _HOSRegister.h */,
+				915FDD2119688AAC00B8F173 /* _HOSRegister.m */,
+			);
+			path = Machine;
+			sourceTree = "<group>";
+		};
+		915FDD2A1969CF1B00B8F173 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				915FDD2B1969CF1B00B8F173 /* HSDetailViewController.h */,
+				915FDD2C1969CF1B00B8F173 /* HSDetailViewController.m */,
+				915FDD2D1969CF1B00B8F173 /* Login */,
+				915FDD341969CF1B00B8F173 /* MovieDetail */,
+				915FDD371969CF1B00B8F173 /* Movies List */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		915FDD2D1969CF1B00B8F173 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				915FDD2E1969CF1B00B8F173 /* HSLoginInteractor.h */,
+				915FDD2F1969CF1B00B8F173 /* HSLoginInteractor.m */,
+				915FDD301969CF1B00B8F173 /* HSLoginPresenter.h */,
+				915FDD311969CF1B00B8F173 /* HSLoginPresenter.m */,
+				915FDD321969CF1B00B8F173 /* HSLoginViewController.h */,
+				915FDD331969CF1B00B8F173 /* HSLoginViewController.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		915FDD341969CF1B00B8F173 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				915FDD351969CF1B00B8F173 /* HSMovieDetailViewController.h */,
+				915FDD361969CF1B00B8F173 /* HSMovieDetailViewController.m */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		915FDD371969CF1B00B8F173 /* Movies List */ = {
+			isa = PBXGroup;
+			children = (
+				915FDD381969CF1B00B8F173 /* HSMovieListData.h */,
+				915FDD391969CF1B00B8F173 /* HSMovieListData.m */,
+				915FDD3A1969CF1B00B8F173 /* HSMoviesListCell.h */,
+				915FDD3B1969CF1B00B8F173 /* HSMoviesListCell.m */,
+				915FDD3C1969CF1B00B8F173 /* HSMoviesListInteractor.h */,
+				915FDD3D1969CF1B00B8F173 /* HSMoviesListInteractor.m */,
+				915FDD3E1969CF1B00B8F173 /* HSMoviesListPresenter.h */,
+				915FDD3F1969CF1B00B8F173 /* HSMoviesListPresenter.m */,
+				915FDD401969CF1B00B8F173 /* HSMoviesListViewController.h */,
+				915FDD411969CF1B00B8F173 /* HSMoviesListViewController.m */,
+			);
+			path = "Movies List";
 			sourceTree = "<group>";
 		};
 		91670ECF194CDB090060C1F5 /* Resources */ = {
@@ -239,13 +347,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		91670ED9194CEB600060C1F5 /* MovieDetail */ = {
+		91BE96A1196DDAA800FAE6EE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				91670EDA194CEB600060C1F5 /* HSMovieDetailViewController.h */,
-				91670EDB194CEB600060C1F5 /* HSMovieDetailViewController.m */,
+				915FDD4C1969CF4000B8F173 /* HSLiveServer.h */,
+				915FDD4D1969CF4000B8F173 /* HSLiveServer.m */,
+				91BE96A2196DDC4300FAE6EE /* HOSLiveSessionManager.h */,
+				91BE96A3196DDC4300FAE6EE /* HOSLiveSessionManager.m */,
 			);
-			path = MovieDetail;
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +428,7 @@
 			targets = (
 				48343140194C7838002CD868 /* HitOrShit */,
 				48343167194C7838002CD868 /* HitOrShitTests */,
+				915FDD161968832B00B8F173 /* Mogenrator */,
 			);
 		};
 /* End PBXProject section */
@@ -360,6 +471,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		915FDD1A1968833200B8F173 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=${PATH}:/usr/local/bin\nmogenerator -m HitOrShit/Model/HitOrShit.xcdatamodeld/HitOrShit.xcdatamodel --machine-dir HitOrShit/Model/DataModel/Machine --human-dir HitOrShit/Model/DataModel/Human --template-var arc=true --base-class HOSRecord";
+		};
 		B3119986EE7A47169885965E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,20 +506,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4834318F194C7E48002CD868 /* HSMoviesListInteractor.m in Sources */,
-				48343161194C7838002CD868 /* HSDetailViewController.m in Sources */,
+				915FDD4B1969CF1B00B8F173 /* HSMoviesListViewController.m in Sources */,
+				915FDD461969CF1B00B8F173 /* HSMovieDetailViewController.m in Sources */,
+				915FDD2219688AAC00B8F173 /* HOSRegister.m in Sources */,
+				915FDD421969CF1B00B8F173 /* HSDetailViewController.m in Sources */,
+				915FDD121968824700B8F173 /* HitOrShit.xcdatamodeld in Sources */,
 				48343182194C7B29002CD868 /* HSWireframe.m in Sources */,
-				48FFC3DC195727E100AEA698 /* HSLoginInteractor.m in Sources */,
-				91670EDF194CEC3D0060C1F5 /* HSMovieListData.m in Sources */,
-				4834318C194C7E30002CD868 /* HSMoviesListPresenter.m in Sources */,
-				48FFC3D6195727B800AEA698 /* HSLoginViewController.m in Sources */,
+				915FDD2919699D8100B8F173 /* _HOSFBDetails.m in Sources */,
+				915FDD4E1969CF4000B8F173 /* HSLiveServer.m in Sources */,
+				915FDD491969CF1B00B8F173 /* HSMoviesListInteractor.m in Sources */,
+				915FDD4A1969CF1B00B8F173 /* HSMoviesListPresenter.m in Sources */,
+				915FDD481969CF1B00B8F173 /* HSMoviesListCell.m in Sources */,
+				912EB4CD1975B88900352726 /* _HOSMovies.m in Sources */,
+				91BE96A4196DDC4300FAE6EE /* HOSLiveSessionManager.m in Sources */,
+				915FDD451969CF1B00B8F173 /* HSLoginViewController.m in Sources */,
+				915FDD2319688AAC00B8F173 /* _HOSRegister.m in Sources */,
+				912EB4CA1975B87B00352726 /* HOSMovies.m in Sources */,
 				48FFC3D21957210900AEA698 /* HSAuthorisation.m in Sources */,
 				48343151194C7838002CD868 /* main.m in Sources */,
-				48343189194C7DFF002CD868 /* HSMoviesListViewController.m in Sources */,
-				48FFC3D9195727D200AEA698 /* HSLoginPresenter.m in Sources */,
-				91670EDC194CEB600060C1F5 /* HSMovieDetailViewController.m in Sources */,
 				48343155194C7838002CD868 /* HSAppDelegate.m in Sources */,
-				91670E8A194CD1610060C1F5 /* HSMoviesListCell.m in Sources */,
+				915FDD441969CF1B00B8F173 /* HSLoginPresenter.m in Sources */,
+				915FDD431969CF1B00B8F173 /* HSLoginInteractor.m in Sources */,
+				915FDD471969CF1B00B8F173 /* HSMovieListData.m in Sources */,
+				915FDD2619699D7800B8F173 /* HOSFBDetails.m in Sources */,
+				915FDD151968826400B8F173 /* HOSRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +727,20 @@
 			};
 			name = Release;
 		};
+		915FDD181968832B00B8F173 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		915FDD191968832B00B8F173 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -623,7 +771,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		915FDD171968832B00B8F173 /* Build configuration list for PBXAggregateTarget "Mogenrator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				915FDD181968832B00B8F173 /* Debug */,
+				915FDD191968832B00B8F173 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		915FDD101968824700B8F173 /* HitOrShit.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				915FDD111968824700B8F173 /* HitOrShit.xcdatamodel */,
+			);
+			currentVersion = 915FDD111968824700B8F173 /* HitOrShit.xcdatamodel */;
+			path = HitOrShit.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 48343139194C7838002CD868 /* Project object */;
 }

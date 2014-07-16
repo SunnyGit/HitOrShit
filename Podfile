@@ -6,4 +6,7 @@ target :'HitOrShit' do
     pod 'FlurrySDK', '4.3.0'
     pod 'HockeySDK', '3.5.2'
     pod 'Facebook-iOS-SDK', '~> 3.14'
+    pod 'MMRecord', '~> 1.4'
+    pod 'MagicalRecord', '~> 2.2'
+    pod 'AFNetworking', '~> 2.3'
 end

@@ -18,6 +18,9 @@
 #import "HSLoginPresenter.h"
 #import "HSLoginInteractor.h"
 
+#import "HOSRegister.h"
+#import "HOSFBDetails.h"
+
 @interface HSWireframe () <HSAuthorisationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
@@ -93,8 +96,35 @@
     [self showLoginScreenWithAnimation:YES];
 }
 
+- (void)registerForHitOrShitWithResultBlock:(void(^)(NSArray *records))resultBlock
+                               failureBlock:(void(^)(NSError *error))failureBlock {
+    HOSFBDetails *fbdetails = [HOSFBDetails MR_findFirst];
+    NSDictionary *data = nil;
+    if (fbdetails != nil) {
+        data = @{@"user_id": fbdetails.userid,
+                 @"name": fbdetails.name};
+    }
+    [HOSRegister registerNewUserWithData:data
+                             resultBlock:^(NSArray *records) {
+                                 if (resultBlock) {
+                                     resultBlock(records);
+                                 }
+                             } failureBlock:^(NSError *error) {
+                                 if (failureBlock) {
+                                     failureBlock(error);
+                                 }
+                             }];
+}
+
 - (void)userLoggedIn {
-    [self dismissLoginScreen];
+    
+    [self registerForHitOrShitWithResultBlock:^(NSArray *records) {
+        [self dismissLoginScreen];
+        
+    } failureBlock:^(NSError *error) {
+        [self dismissLoginScreen];
+
+    }];
 }
 
 - (void)showMessage:(NSString *)text withTitle:(NSString *)title {

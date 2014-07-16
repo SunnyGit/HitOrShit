@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="HOSFBDetails" representedClassName="HOSFBDetails" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HOSMovies" representedClassName="HOSMovies" syncable="YES">
+        <attribute name="cast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="movie_id" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="MMRecordAttributeAlternateNameKey" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="moviePoster" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="MMRecordAttributeAlternateNameKey" value="poster"/>
+            </userInfo>
+        </attribute>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <userInfo>
+            <entry key="MMRecordAttributeAlternateNameKey" value="movies"/>
+        </userInfo>
+    </entity>
+    <entity name="HOSRegister" representedClassName="HOSRegister" syncable="YES">
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sucessToken" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="MMRecordAttributeAlternateNameKey" value="token"/>
+            </userInfo>
+        </attribute>
+    </entity>
+    <elements>
+        <element name="HOSFBDetails" positionX="-45" positionY="9" width="128" height="135"/>
+        <element name="HOSMovies" positionX="-54" positionY="45" width="128" height="118"/>
+        <element name="HOSRegister" positionX="-63" positionY="-18" width="128" height="73"/>
+    </elements>
+</model>

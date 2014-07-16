@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HitOrShit-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HitOrShit-Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,6 +34,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HitOrShit-MMRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-HitOrShit-MagicalRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HitOrShit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0DAA38C8C0594B86B480F82F</key>
+		<key>168DDF18C74A47F7962C2EC8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0F53A812B53E4BD3A6862953</key>
+		<key>2D006FDDBE4D4DF8BAD414A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B34649118C14330A7F2BA6F</key>
+		<key>741606FE99054ED1A5590379</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60DC50C26BE44DB68A2B6727</key>
+		<key>9FF53D309CD647689433C496</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>81048DEEED754A54B213DDE1</key>
+		<key>ACACE6670FE74888A74DE60E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BC139C05B894F52BA52B2B8</key>
+		<key>BF65695B77F040A3A77F86DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4F32DC1EDA74768BD6E7E3B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2E9DD03F4784E508DA0182C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FCF6106C2F0740B6AF1B48B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

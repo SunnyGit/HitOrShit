@@ -10,6 +10,8 @@
 
 #import "HSWireframe.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "MMRecord.h"
+#import "HSLiveServer.h"
 
 @interface HSAppDelegate ()
 @property (nonatomic, strong) HSWireframe *wireframe;
@@ -20,6 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.wireframe = [[HSWireframe alloc] initWithWindow:self.window];
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+    [MMRecord registerServerClass:[HSLiveServer class]];
     return YES;
 }
 

@@ -10,8 +10,10 @@
 
 @interface HSMovieListData : NSObject
 
-@property (nonatomic, strong) UIImage *movieBannerImage;
+@property (nonatomic, copy) NSString *moviePosterLink;
 
 @property (nonatomic, copy) NSString *movieName;
+
+@property (nonatomic, copy) NSString *movieId;
 
 @end

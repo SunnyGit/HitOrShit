@@ -11,6 +11,8 @@
 #import "HSMovieListData.h"
 #import "HSAuthorisation.h"
 
+#import "HOSMovies.h"
+
 @implementation HSMoviesListPresenter
 
 - (void)fecthMovieListDataWitSuccess:(void(^)(NSArray *movieListData))completion
@@ -33,36 +35,17 @@
 
 - (NSArray *)prepareMovieListDataForView:(NSArray *)movieArray {
     NSMutableArray *listArray = [NSMutableArray array];
-    for (NSString *name in movieArray) {
-        if ([name isEqualToString:@"Sample1"]) {
-            [listArray addObject:[self sample1ListData1]];
-        } else if ([name isEqualToString:@"Sample2"]) {
-            [listArray addObject:[self sample1ListData2]];
-        } else {
-            [listArray addObject:[self sample1ListData3]];
-        }
+    for (HOSMovies *movie in movieArray) {
+        [listArray addObject:[self movieListDataWithMovie:movie]];
     }
     return (NSArray *)listArray;
 }
 
-- (HSMovieListData *)sample1ListData1 {
+- (HSMovieListData *)movieListDataWithMovie:(HOSMovies *)movie {
     HSMovieListData *listData = [[HSMovieListData alloc] init];
-    listData.movieBannerImage = [UIImage imageNamed:@"hrudayaKalayam.png"];
-    listData.movieName = @"Hrudaya Kalayam";
-    return listData;
-}
-
-- (HSMovieListData *)sample1ListData2 {
-    HSMovieListData *listData = [[HSMovieListData alloc] init];
-    listData.movieBannerImage = [UIImage imageNamed:@"manam.png"];
-    listData.movieName = @"Manam";
-    return listData;
-}
-
-- (HSMovieListData *)sample1ListData3 {
-    HSMovieListData *listData = [[HSMovieListData alloc] init];
-    listData.movieBannerImage = [UIImage imageNamed:@"Raid2.png"];
-    listData.movieName = @"TheRaid2";
+    listData.movieName = movie.title;
+    listData.movieId = movie.movie_id;
+    listData.moviePosterLink = movie.moviePoster;
     return listData;
 }
 

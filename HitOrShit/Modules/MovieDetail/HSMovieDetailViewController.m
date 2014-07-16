@@ -9,6 +9,7 @@
 #import "HSMovieDetailViewController.h"
 
 #import "HSMovieListData.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface HSMovieDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *movieBannerImageView;
@@ -26,7 +27,7 @@
 #pragma mark Setup Methods
 
 - (void)setupData {
-    self.movieBannerImageView.image = self.movieData.movieBannerImage;
+    [self.movieBannerImageView setImageWithURL:[NSURL URLWithString:self.movieData.moviePosterLink]];
 }
 
 @end
