@@ -184,7 +184,7 @@
                                                         toItem:self.movieBannerImageView
                                                      attribute:NSLayoutAttributeBottom
                                                     multiplier:1.0
-                                                      constant:3.0f]];
+                                                      constant:5.0f]];
     
     [self.contentContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.titleLabel
                                                                           attribute:NSLayoutAttributeHeight
@@ -227,7 +227,7 @@
                                                                              toItem:self.contentContainerView
                                                                           attribute:NSLayoutAttributeBottom
                                                                          multiplier:1.0
-                                                                           constant:-10.0f]];
+                                                                           constant:-5.0f]];
 }
 
 - (void)setupTypeLabelConstraints {
@@ -254,7 +254,7 @@
                                                                              toItem:self.contentContainerView
                                                                           attribute:NSLayoutAttributeBottom
                                                                          multiplier:1.0
-                                                                           constant:-10.0f]];
+                                                                           constant:-7.0f]];
 }
 
 #pragma mark Setter Methods
