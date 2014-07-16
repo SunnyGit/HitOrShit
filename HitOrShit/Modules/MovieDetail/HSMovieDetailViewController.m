@@ -32,6 +32,7 @@
     self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.backButton setTitle:@"<-" forState:UIControlStateNormal];
     [self.backButton addTarget:self action:@selector(backButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.backButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f]];
     [self.view addSubview:self.backButton];
     [self addConstraintsToBackButton];
 }
@@ -55,7 +56,7 @@
                                                                           relatedBy:NSLayoutRelationEqual
                                                                              toItem:self.view
                                                                           attribute:NSLayoutAttributeTop
-                                                                         multiplier:1.0 constant:10.0f]];
+                                                                         multiplier:1.0 constant:20.0f]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.backButton
                                                                           attribute:NSLayoutAttributeLeft
@@ -63,21 +64,6 @@
                                                                              toItem:self.view
                                                                           attribute:NSLayoutAttributeLeft
                                                                          multiplier:1.0 constant:20.0]];
-    
-//    [self.contentContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.movieBannerImageView
-//                                                                          attribute:NSLayoutAttributeRight
-//                                                                          relatedBy:NSLayoutRelationEqual
-//                                                                             toItem:self.contentContainerView
-//                                                                          attribute:NSLayoutAttributeRight
-//                                                                         multiplier:1.0 constant:0.0]];
-//    
-//    
-//    [self.contentContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.movieBannerImageView
-//                                                                          attribute:NSLayoutAttributeBottom
-//                                                                          relatedBy:NSLayoutRelationEqual
-//                                                                             toItem:self.contentContainerView
-//                                                                          attribute:NSLayoutAttributeBottom
-//                                                                         multiplier:1.0 constant:-60.0]];
 }
 
 @end
