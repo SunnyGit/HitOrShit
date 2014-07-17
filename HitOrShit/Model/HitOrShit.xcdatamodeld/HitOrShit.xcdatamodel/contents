@@ -22,8 +22,9 @@
             </userInfo>
         </attribute>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HOSReview" inverseName="movie" inverseEntity="HOSReview" syncable="YES"/>
         <userInfo>
-            <entry key="MMRecordAttributeAlternateNameKey" value="movies"/>
+            <entry key="MMRecordEntityPrimaryAttributeKey" value="movie_id"/>
         </userInfo>
     </entity>
     <entity name="HOSRegister" representedClassName="HOSRegister" syncable="YES">
@@ -34,9 +35,22 @@
             </userInfo>
         </attribute>
     </entity>
+    <entity name="HOSReview" syncable="YES">
+        <attribute name="hearts" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="movie_review" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="star_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="user_imageURL" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="MMRecordAttributeAlternateNameKey" value="user_image_url"/>
+            </userInfo>
+        </attribute>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HOSMovies" inverseName="reviews" inverseEntity="HOSMovies" syncable="YES"/>
+    </entity>
     <elements>
         <element name="HOSFBDetails" positionX="-45" positionY="9" width="128" height="135"/>
-        <element name="HOSMovies" positionX="-54" positionY="45" width="128" height="118"/>
+        <element name="HOSMovies" positionX="-54" positionY="45" width="128" height="133"/>
         <element name="HOSRegister" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="HOSReview" positionX="-54" positionY="54" width="128" height="133"/>
     </elements>
 </model>

@@ -48,7 +48,9 @@
     __weak typeof(self) weakSelf = self;
     [self.presenter fecthMovieListDataWitSuccess:^(NSArray *movieListData) {
         weakSelf.movieListCollection = movieListData;
-    } andWithFailure:nil];
+    } andWithFailure:^(NSError *error, NSArray *localMovieListData) {
+        weakSelf.movieListCollection = localMovieListData;
+    }];
 }
 
 #pragma mark Setter Methods

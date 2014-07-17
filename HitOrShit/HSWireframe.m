@@ -100,9 +100,11 @@
                                failureBlock:(void(^)(NSError *error))failureBlock {
     HOSFBDetails *fbdetails = [HOSFBDetails MR_findFirst];
     NSDictionary *data = nil;
+    NSString *fbImageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=",fbdetails.userid];
     if (fbdetails != nil) {
         data = @{@"user_id": fbdetails.userid,
-                 @"name": fbdetails.name};
+                 @"name": fbdetails.name,
+                 @"user_image":fbImageUrl};
     }
     [HOSRegister registerNewUserWithData:data
                              resultBlock:^(NSArray *records) {

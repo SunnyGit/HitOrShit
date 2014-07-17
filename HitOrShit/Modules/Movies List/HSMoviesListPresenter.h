@@ -21,6 +21,6 @@
 @property (nonatomic, strong) id<HSMoviesListInteractorInteraction> interactor;
 
 - (void)fecthMovieListDataWitSuccess:(void(^)(NSArray *movieListData))completion
-                      andWithFailure:(void(^)(NSError *error))failure;
+                      andWithFailure:(void(^)(NSError *error, NSArray *localMovieListData))failure;
 
 @end

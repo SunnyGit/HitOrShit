@@ -16,7 +16,7 @@
 @implementation HSMoviesListPresenter
 
 - (void)fecthMovieListDataWitSuccess:(void(^)(NSArray *movieListData))completion
-                      andWithFailure:(void(^)(NSError *error))failure {
+                      andWithFailure:(void(^)(NSError *error, NSArray *localMovieListData))failure {
     [HSAuthorisation requestForAuthorisationAccess:^(BOOL granted) {
         if (granted) {
             [self.interactor fecthMovieListDataWitSuccess:^(NSArray *movieListData) {
@@ -25,7 +25,11 @@
                     completion(movieArray);
                 }
             } andWithFailure:^(NSError *error) {
-                // TODO Handle the error block
+                NSArray *localMovieArray = [self prepareMovieListDataForView:[HOSMovies MR_findAll]];
+
+                if (failure) {
+                    failure(error,localMovieArray);
+                }
             }];
         } else {
             [self.wireframe showLoginScreenWithAnimation:NO];

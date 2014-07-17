@@ -12,6 +12,7 @@ const struct HOSMoviesAttributes HOSMoviesAttributes = {
 };
 
 const struct HOSMoviesRelationships HOSMoviesRelationships = {
+	.reviews = @"reviews",
 };
 
 const struct HOSMoviesFetchedProperties HOSMoviesFetchedProperties = {
@@ -84,6 +85,19 @@ const struct HOSMoviesFetchedProperties HOSMoviesFetchedProperties = {
 
 
 
+
+@dynamic reviews;
+
+	
+- (NSMutableSet*)reviewsSet {
+	[self willAccessValueForKey:@"reviews"];
+  
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"reviews"];
+  
+	[self didAccessValueForKey:@"reviews"];
+	return result;
+}
+	
 
 
 
