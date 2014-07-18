@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class HSMovieListData;
+@class HSMovieDetailPresenter;
 
 @interface HSMovieDetailViewController : UIViewController
 
 @property (nonatomic, strong) HSMovieListData *movieData;
+
+@property (nonatomic, strong) HSMovieDetailPresenter *presenter;
 
 @end

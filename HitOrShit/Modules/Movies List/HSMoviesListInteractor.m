@@ -18,9 +18,11 @@
                       andWithFailure:(void(^)(NSError *error))failure {
     HOSFBDetails *fbdetails = [HOSFBDetails MR_findFirst];
     HOSRegister *registrationDetails = [HOSRegister MR_findFirst];
-    
-    NSDictionary *data = @{@"user_id" : fbdetails.userid,
-                           @"token" : registrationDetails.sucessToken};
+    NSDictionary *data = nil;
+    if (fbdetails != nil && registrationDetails != nil) {
+        data = @{@"user_id" : fbdetails.userid,
+                 @"token" : registrationDetails.sucessToken};
+    }
     
    [HOSMovies startRequestWithURN:@"/movies"
                              data:data

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class HSMovieListData;
+
 @interface HSWireframe : NSObject
 
 - (instancetype)initWithWindow:(UIWindow *)window;
@@ -15,5 +17,7 @@
 - (void)showLoginScreenWithAnimation:(BOOL)animate;
 
 - (void)loginWithFacebook;
+
+- (void)pushMovieDetailViewControllerWithMovieListData:(HSMovieListData *)data;
 
 @end

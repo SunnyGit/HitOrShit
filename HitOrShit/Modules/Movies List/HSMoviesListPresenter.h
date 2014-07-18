@@ -11,6 +11,7 @@
 #import "HSWireframe.h"
 #import "HSMoviesListViewController.h"
 #import "HSMoviesListInteractor.h"
+#import "HSMovieDetailViewController.h"
 
 @protocol HSMoviesListInteractorInteraction;
 

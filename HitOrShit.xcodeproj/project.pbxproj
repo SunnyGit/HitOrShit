@@ -47,7 +47,6 @@
 		915FDD2319688AAC00B8F173 /* _HOSRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2119688AAC00B8F173 /* _HOSRegister.m */; };
 		915FDD2619699D7800B8F173 /* HOSFBDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2519699D7800B8F173 /* HOSFBDetails.m */; };
 		915FDD2919699D8100B8F173 /* _HOSFBDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2819699D8100B8F173 /* _HOSFBDetails.m */; };
-		915FDD421969CF1B00B8F173 /* HSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2C1969CF1B00B8F173 /* HSDetailViewController.m */; };
 		915FDD431969CF1B00B8F173 /* HSLoginInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD2F1969CF1B00B8F173 /* HSLoginInteractor.m */; };
 		915FDD441969CF1B00B8F173 /* HSLoginPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD311969CF1B00B8F173 /* HSLoginPresenter.m */; };
 		915FDD451969CF1B00B8F173 /* HSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD331969CF1B00B8F173 /* HSLoginViewController.m */; };
@@ -58,7 +57,13 @@
 		915FDD4A1969CF1B00B8F173 /* HSMoviesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD3F1969CF1B00B8F173 /* HSMoviesListPresenter.m */; };
 		915FDD4B1969CF1B00B8F173 /* HSMoviesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD411969CF1B00B8F173 /* HSMoviesListViewController.m */; };
 		915FDD4E1969CF4000B8F173 /* HSLiveServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD4D1969CF4000B8F173 /* HSLiveServer.m */; };
+		91B9862619780D6900E4D580 /* HOSReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B9862519780D6900E4D580 /* HOSReview.m */; };
+		91B9862919780D7200E4D580 /* _HOSReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B9862819780D7200E4D580 /* _HOSReview.m */; };
+		91B9862C197829F200E4D580 /* HSMovieDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B9862B197829F200E4D580 /* HSMovieDetailPresenter.m */; };
+		91B9862F19782A2A00E4D580 /* HSMovieDetailInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B9862E19782A2A00E4D580 /* HSMovieDetailInteractor.m */; };
 		91BE96A4196DDC4300FAE6EE /* HOSLiveSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BE96A3196DDC4300FAE6EE /* HOSLiveSessionManager.m */; };
+		91C2560519784C5700C10D1D /* HSMovieDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C2560419784C5700C10D1D /* HSMovieDetailHeaderView.m */; };
+		91C256091978576F00C10D1D /* HSMovieDetailHeaderViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C256081978576F00C10D1D /* HSMovieDetailHeaderViewData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,8 +117,6 @@
 		915FDD2519699D7800B8F173 /* HOSFBDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSFBDetails.m; sourceTree = "<group>"; };
 		915FDD2719699D8100B8F173 /* _HOSFBDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HOSFBDetails.h; sourceTree = "<group>"; };
 		915FDD2819699D8100B8F173 /* _HOSFBDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _HOSFBDetails.m; sourceTree = "<group>"; };
-		915FDD2B1969CF1B00B8F173 /* HSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDetailViewController.h; sourceTree = "<group>"; };
-		915FDD2C1969CF1B00B8F173 /* HSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDetailViewController.m; sourceTree = "<group>"; };
 		915FDD2E1969CF1B00B8F173 /* HSLoginInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginInteractor.h; sourceTree = "<group>"; };
 		915FDD2F1969CF1B00B8F173 /* HSLoginInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLoginInteractor.m; sourceTree = "<group>"; };
 		915FDD301969CF1B00B8F173 /* HSLoginPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginPresenter.h; sourceTree = "<group>"; };
@@ -135,8 +138,20 @@
 		915FDD4C1969CF4000B8F173 /* HSLiveServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLiveServer.h; sourceTree = "<group>"; };
 		915FDD4D1969CF4000B8F173 /* HSLiveServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLiveServer.m; sourceTree = "<group>"; };
 		919B4A7C8F9B4C16A2C783A8 /* Pods-HitOrShit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitOrShit.xcconfig"; path = "Pods/Pods-HitOrShit.xcconfig"; sourceTree = "<group>"; };
+		91B9862419780D6800E4D580 /* HOSReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSReview.h; sourceTree = "<group>"; };
+		91B9862519780D6900E4D580 /* HOSReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSReview.m; sourceTree = "<group>"; };
+		91B9862719780D7200E4D580 /* _HOSReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HOSReview.h; sourceTree = "<group>"; };
+		91B9862819780D7200E4D580 /* _HOSReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _HOSReview.m; sourceTree = "<group>"; };
+		91B9862A197829F200E4D580 /* HSMovieDetailPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailPresenter.h; sourceTree = "<group>"; };
+		91B9862B197829F200E4D580 /* HSMovieDetailPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailPresenter.m; sourceTree = "<group>"; };
+		91B9862D19782A2A00E4D580 /* HSMovieDetailInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailInteractor.h; sourceTree = "<group>"; };
+		91B9862E19782A2A00E4D580 /* HSMovieDetailInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailInteractor.m; sourceTree = "<group>"; };
 		91BE96A2196DDC4300FAE6EE /* HOSLiveSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSLiveSessionManager.h; sourceTree = "<group>"; };
 		91BE96A3196DDC4300FAE6EE /* HOSLiveSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSLiveSessionManager.m; sourceTree = "<group>"; };
+		91C2560319784C5700C10D1D /* HSMovieDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailHeaderView.h; sourceTree = "<group>"; };
+		91C2560419784C5700C10D1D /* HSMovieDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailHeaderView.m; sourceTree = "<group>"; };
+		91C256071978576F00C10D1D /* HSMovieDetailHeaderViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailHeaderViewData.h; sourceTree = "<group>"; };
+		91C256081978576F00C10D1D /* HSMovieDetailHeaderViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailHeaderViewData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +284,8 @@
 		915FDD1C19688AAC00B8F173 /* Human */ = {
 			isa = PBXGroup;
 			children = (
+				91B9862419780D6800E4D580 /* HOSReview.h */,
+				91B9862519780D6900E4D580 /* HOSReview.m */,
 				912EB4C81975B87B00352726 /* HOSMovies.h */,
 				912EB4C91975B87B00352726 /* HOSMovies.m */,
 				915FDD2419699D7800B8F173 /* HOSFBDetails.h */,
@@ -282,6 +299,8 @@
 		915FDD1F19688AAC00B8F173 /* Machine */ = {
 			isa = PBXGroup;
 			children = (
+				91B9862719780D7200E4D580 /* _HOSReview.h */,
+				91B9862819780D7200E4D580 /* _HOSReview.m */,
 				912EB4CB1975B88900352726 /* _HOSMovies.h */,
 				912EB4CC1975B88900352726 /* _HOSMovies.m */,
 				915FDD2719699D8100B8F173 /* _HOSFBDetails.h */,
@@ -295,8 +314,6 @@
 		915FDD2A1969CF1B00B8F173 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				915FDD2B1969CF1B00B8F173 /* HSDetailViewController.h */,
-				915FDD2C1969CF1B00B8F173 /* HSDetailViewController.m */,
 				915FDD2D1969CF1B00B8F173 /* Login */,
 				915FDD341969CF1B00B8F173 /* MovieDetail */,
 				915FDD371969CF1B00B8F173 /* Movies List */,
@@ -320,8 +337,15 @@
 		915FDD341969CF1B00B8F173 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				91C256061978575400C10D1D /* Model */,
 				915FDD351969CF1B00B8F173 /* HSMovieDetailViewController.h */,
 				915FDD361969CF1B00B8F173 /* HSMovieDetailViewController.m */,
+				91B9862A197829F200E4D580 /* HSMovieDetailPresenter.h */,
+				91B9862B197829F200E4D580 /* HSMovieDetailPresenter.m */,
+				91B9862D19782A2A00E4D580 /* HSMovieDetailInteractor.h */,
+				91B9862E19782A2A00E4D580 /* HSMovieDetailInteractor.m */,
+				91C2560319784C5700C10D1D /* HSMovieDetailHeaderView.h */,
+				91C2560419784C5700C10D1D /* HSMovieDetailHeaderView.m */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -361,6 +385,15 @@
 				91BE96A3196DDC4300FAE6EE /* HOSLiveSessionManager.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		91C256061978575400C10D1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91C256071978576F00C10D1D /* HSMovieDetailHeaderViewData.h */,
+				91C256081978576F00C10D1D /* HSMovieDetailHeaderViewData.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,8 +548,10 @@
 				915FDD4B1969CF1B00B8F173 /* HSMoviesListViewController.m in Sources */,
 				915FDD461969CF1B00B8F173 /* HSMovieDetailViewController.m in Sources */,
 				915FDD2219688AAC00B8F173 /* HOSRegister.m in Sources */,
-				915FDD421969CF1B00B8F173 /* HSDetailViewController.m in Sources */,
 				915FDD121968824700B8F173 /* HitOrShit.xcdatamodeld in Sources */,
+				91B9862F19782A2A00E4D580 /* HSMovieDetailInteractor.m in Sources */,
+				91C256091978576F00C10D1D /* HSMovieDetailHeaderViewData.m in Sources */,
+				91C2560519784C5700C10D1D /* HSMovieDetailHeaderView.m in Sources */,
 				48343182194C7B29002CD868 /* HSWireframe.m in Sources */,
 				915FDD2919699D8100B8F173 /* _HOSFBDetails.m in Sources */,
 				915FDD4E1969CF4000B8F173 /* HSLiveServer.m in Sources */,
@@ -525,6 +560,7 @@
 				915FDD481969CF1B00B8F173 /* HSMoviesListCell.m in Sources */,
 				912EB4CD1975B88900352726 /* _HOSMovies.m in Sources */,
 				91BE96A4196DDC4300FAE6EE /* HOSLiveSessionManager.m in Sources */,
+				91B9862919780D7200E4D580 /* _HOSReview.m in Sources */,
 				915FDD451969CF1B00B8F173 /* HSLoginViewController.m in Sources */,
 				915FDD2319688AAC00B8F173 /* _HOSRegister.m in Sources */,
 				912EB4CA1975B87B00352726 /* HOSMovies.m in Sources */,
@@ -535,7 +571,9 @@
 				915FDD431969CF1B00B8F173 /* HSLoginInteractor.m in Sources */,
 				915FDD471969CF1B00B8F173 /* HSMovieListData.m in Sources */,
 				915FDD2619699D7800B8F173 /* HOSFBDetails.m in Sources */,
+				91B9862619780D6900E4D580 /* HOSReview.m in Sources */,
 				915FDD151968826400B8F173 /* HOSRecord.m in Sources */,
+				91B9862C197829F200E4D580 /* HSMovieDetailPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,13 +13,11 @@ extern const struct HOSMoviesAttributes {
 } HOSMoviesAttributes;
 
 extern const struct HOSMoviesRelationships {
-	__unsafe_unretained NSString *reviews;
 } HOSMoviesRelationships;
 
 extern const struct HOSMoviesFetchedProperties {
 } HOSMoviesFetchedProperties;
 
-@class NSManagedObject;
 
 
 
@@ -90,22 +88,10 @@ extern const struct HOSMoviesFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSSet *reviews;
-
-- (NSMutableSet*)reviewsSet;
-
-
-
-
 
 @end
 
 @interface _HOSMovies (CoreDataGeneratedAccessors)
-
-- (void)addReviews:(NSSet*)value_;
-- (void)removeReviews:(NSSet*)value_;
-- (void)addReviewsObject:(NSManagedObject*)value_;
-- (void)removeReviewsObject:(NSManagedObject*)value_;
 
 @end
 
@@ -140,11 +126,6 @@ extern const struct HOSMoviesFetchedProperties {
 - (void)setPrimitiveTitle:(NSString*)value;
 
 
-
-
-
-- (NSMutableSet*)primitiveReviews;
-- (void)setPrimitiveReviews:(NSMutableSet*)value;
 
 
 @end

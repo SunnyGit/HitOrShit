@@ -14,6 +14,10 @@
 #import "HSMoviesListPresenter.h"
 #import "HSMoviesListInteractor.h"
 
+#import "HSMovieDetailViewController.h"
+#import "HSMovieDetailPresenter.h"
+#import "HSMovieDetailInteractor.h"
+
 #import "HSLoginViewController.h"
 #import "HSLoginPresenter.h"
 #import "HSLoginInteractor.h"
@@ -26,7 +30,10 @@
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) UIStoryboard *storyboard;
 @property (nonatomic, strong) HSAuthorisation *authorisation;
+
 @property (nonatomic, strong) HSMoviesListViewController *listViewController;
+@property (nonatomic, strong) HSMovieDetailViewController *movieDetailController;
+
 @property (nonatomic, strong) HSLoginViewController *loginViewController;
 
 @end
@@ -51,7 +58,6 @@
     UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"HSNavigationController"];
     self.window.rootViewController = navController;
     self.listViewController = (HSMoviesListViewController *)[navController topViewController];
-//    self.listViewController = [self obtainListViewControllerInstance];
     HSMoviesListInteractor *interactor = [[HSMoviesListInteractor alloc] init];
     HSMoviesListPresenter *presenter = [[HSMoviesListPresenter alloc] init];
     self.listViewController.presenter = presenter;
@@ -62,9 +68,22 @@
     return self.listViewController;
 }
 
-//- (HSMoviesListViewController *)obtainListViewControllerInstance {
-//    return [self.storyboard instantiateViewControllerWithIdentifier:@"HSMoviesListViewController"];
-//}
+
+- (void)pushMovieDetailViewControllerWithMovieListData:(HSMovieListData *)data{
+    if (self.movieDetailController != nil) {
+        self.movieDetailController.movieData = data;
+        [self.listViewController.navigationController pushViewController:self.movieDetailController animated:YES];
+        return;
+    }
+    self.movieDetailController = [self.storyboard instantiateViewControllerWithIdentifier:@"HSMovieDetailViewController"];
+    self.movieDetailController.movieData = data;
+    HSMovieDetailInteractor *interactor = [[HSMovieDetailInteractor alloc] init];
+    HSMovieDetailPresenter *presenter = [[HSMovieDetailPresenter alloc] init];
+    self.movieDetailController.presenter = presenter;
+    presenter.interactor = interactor;
+    presenter.wireFrame = self;
+    [self.listViewController.navigationController pushViewController:self.movieDetailController animated:YES];
+}
 
 - (void)showLoginScreenWithAnimation:(BOOL)animate {
     self.loginViewController = [self loginViewController];

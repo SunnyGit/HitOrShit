@@ -64,7 +64,7 @@
 #pragma mark Delegate Methods
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"DetailView" sender:self];
+    [self.presenter.wireframe pushMovieDetailViewControllerWithMovieListData:[self.movieListCollection objectAtIndex:indexPath.item]];
 }
 
 
@@ -82,12 +82,5 @@
     return cell;
 }
 
-#pragma mark Segeue Methods
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    HSMovieDetailViewController *detailListViewController = segue.destinationViewController;
-    NSIndexPath *selectedIndexPath = [[self.moviesListCollectionView indexPathsForSelectedItems] firstObject];
-    detailListViewController.movieData = [self.movieListCollection objectAtIndex:selectedIndexPath.item];
-}
 
 @end

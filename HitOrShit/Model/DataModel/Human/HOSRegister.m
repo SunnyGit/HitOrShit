@@ -11,7 +11,7 @@
 @implementation HOSRegister
 
 + (NSString *)keyPathForResponseObject {
-    return @"data.result";
+    return @"result";
 }
 
 + (void)registerNewUserWithData:(NSDictionary *)data
