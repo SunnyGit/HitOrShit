@@ -22,10 +22,20 @@
 
 @implementation HSMoviesListViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCells];
+    [self setCollectionViewFlowLayout];
+    [self setNavigationBarLogo];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setHidden:NO];
+    [self fetchListData];
+}
+
+- (void)setCollectionViewFlowLayout {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(151, 250);
     flowLayout.minimumLineSpacing = 6.0;
@@ -34,10 +44,14 @@
     self.moviesListCollectionView.collectionViewLayout = flowLayout;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
-    [self fetchListData];
+- (void)setNavigationBarLogo {
+    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"navigation_logo"] resizableImageWithCapInsets:UIEdgeInsetsMake(2.0, 2.0, 2.0, 2.0)]];
+    [logoImageView setFrame:CGRectMake(0.0,
+                                       0.0,
+                                       logoImageView.image.size.width,
+                                       logoImageView.image.size.height)];
+    UIBarButtonItem *customItem = [[UIBarButtonItem alloc] initWithCustomView:logoImageView];
+    [self.navigationItem setLeftBarButtonItem:customItem];
 }
 
 - (void)registerCells {

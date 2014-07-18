@@ -9,7 +9,7 @@
 
 #define kDefaultMaxRating 5
 #define kDefaultLeftMargin 5
-#define kDefaultMidMargin 5
+#define kDefaultMidMargin 3
 #define kDefaultRightMargin 5
 #define kDefaultMinAllowedRating 1
 #define kDefaultMaxAllowedRating kDefaultMaxRating

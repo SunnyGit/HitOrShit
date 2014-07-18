@@ -56,6 +56,7 @@
 
 - (HSMoviesListViewController *)configureListViewController {
     UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"HSNavigationController"];
+    
     self.window.rootViewController = navController;
     self.listViewController = (HSMoviesListViewController *)[navController topViewController];
     HSMoviesListInteractor *interactor = [[HSMoviesListInteractor alloc] init];
