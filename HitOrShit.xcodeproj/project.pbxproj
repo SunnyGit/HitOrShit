@@ -39,6 +39,7 @@
 		48343182194C7B29002CD868 /* HSWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 48343181194C7B29002CD868 /* HSWireframe.m */; };
 		48AC97231977240000707A66 /* HSMovieStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48AC97221977240000707A66 /* HSMovieStarRatingView.m */; };
 		48FFC3D21957210900AEA698 /* HSAuthorisation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFC3D11957210900AEA698 /* HSAuthorisation.m */; };
+		912DC1C21979A61F00AC3493 /* HSMovieReviewDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 912DC1C11979A61F00AC3493 /* HSMovieReviewDetailsView.m */; };
 		912EB4CA1975B87B00352726 /* HOSMovies.m in Sources */ = {isa = PBXBuildFile; fileRef = 912EB4C91975B87B00352726 /* HOSMovies.m */; };
 		912EB4CD1975B88900352726 /* _HOSMovies.m in Sources */ = {isa = PBXBuildFile; fileRef = 912EB4CC1975B88900352726 /* _HOSMovies.m */; };
 		915FDD121968824700B8F173 /* HitOrShit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD101968824700B8F173 /* HitOrShit.xcdatamodeld */; };
@@ -102,6 +103,8 @@
 		48AC97221977240000707A66 /* HSMovieStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieStarRatingView.m; sourceTree = "<group>"; };
 		48FFC3D01957210900AEA698 /* HSAuthorisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAuthorisation.h; sourceTree = "<group>"; };
 		48FFC3D11957210900AEA698 /* HSAuthorisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAuthorisation.m; sourceTree = "<group>"; };
+		912DC1C01979A61F00AC3493 /* HSMovieReviewDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieReviewDetailsView.h; sourceTree = "<group>"; };
+		912DC1C11979A61F00AC3493 /* HSMovieReviewDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieReviewDetailsView.m; sourceTree = "<group>"; };
 		912EB4C81975B87B00352726 /* HOSMovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSMovies.h; sourceTree = "<group>"; };
 		912EB4C91975B87B00352726 /* HOSMovies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSMovies.m; sourceTree = "<group>"; };
 		912EB4CB1975B88900352726 /* _HOSMovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HOSMovies.h; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				91B9862E19782A2A00E4D580 /* HSMovieDetailInteractor.m */,
 				91C2560319784C5700C10D1D /* HSMovieDetailHeaderView.h */,
 				91C2560419784C5700C10D1D /* HSMovieDetailHeaderView.m */,
+				912DC1C01979A61F00AC3493 /* HSMovieReviewDetailsView.h */,
+				912DC1C11979A61F00AC3493 /* HSMovieReviewDetailsView.m */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				915FDD2919699D8100B8F173 /* _HOSFBDetails.m in Sources */,
 				915FDD4E1969CF4000B8F173 /* HSLiveServer.m in Sources */,
 				915FDD491969CF1B00B8F173 /* HSMoviesListInteractor.m in Sources */,
+				912DC1C21979A61F00AC3493 /* HSMovieReviewDetailsView.m in Sources */,
 				915FDD4A1969CF1B00B8F173 /* HSMoviesListPresenter.m in Sources */,
 				915FDD481969CF1B00B8F173 /* HSMoviesListCell.m in Sources */,
 				912EB4CD1975B88900352726 /* _HOSMovies.m in Sources */,

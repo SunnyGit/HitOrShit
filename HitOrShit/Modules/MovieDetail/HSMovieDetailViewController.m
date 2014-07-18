@@ -115,7 +115,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(320.0f, 340.0f);
+    return CGSizeMake(320.0f, 360.0f);
 }
 
 
@@ -128,8 +128,6 @@
                                                   withReuseIdentifier:NSStringFromClass([HSMovieDetailHeaderView class])
                                                          forIndexPath:indexPath];
         view.headerData = [self headerViewData];
-        
-        view.backgroundColor = [UIColor greenColor];
     }
     return view;
 }

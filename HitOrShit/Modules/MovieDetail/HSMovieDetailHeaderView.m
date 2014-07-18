@@ -17,8 +17,6 @@
 
 @property (nonatomic, strong) UIImageView *moviePosterImageView;
 @property (nonatomic, strong) UILabel *movieNameLabel;
-@property (nonatomic, strong) UILabel *castTitleLabel;
-@property (nonatomic, strong) UILabel *castDetailsLabel;
 @property (nonatomic, strong) UIView *reviewDetailsView;
 
 @end
@@ -38,9 +36,7 @@
 
 - (void)setupSubViews {
     [self setupMoviePosterImageView];
-    [self setupMovieNameLabel];
-    [self setupCastTitleLabel];
-    [self setupCastDetailsLabel];
+    [self setupMovieNameLabel];;
     [self setupReviewDetailView];
 }
 
@@ -60,24 +56,12 @@
     [self setupMovieNameLabelConstraints];
 }
 
-- (void)setupCastTitleLabel {
-    self.castTitleLabel = [[UILabel alloc] init];
-    self.castTitleLabel.backgroundColor = [UIColor clearColor];
-    self.castTitleLabel.text = NSLocalizedString(@"Cast & Crew", @"");
-    self.castTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:14.0f];
-    self.castTitleLabel.textColor = [UIColor colorWithRed:243.0/255.0
-                                                    green:170.0/255.0
-                                                     blue:0.0/255.0
-                                                    alpha:1.0f];
-    [self addSubview:self.castTitleLabel];
-}
-
-- (void)setupCastDetailsLabel {
-    
-}
 
 - (void)setupReviewDetailView {
-    
+    self.reviewDetailsView = [[UIView alloc] init];
+    self.reviewDetailsView.backgroundColor = [UIColor greenColor];
+    [self addSubview:self.reviewDetailsView];
+    [self setupReviewDetailsViewConstraints];
 }
 
 #pragma mark Setter Methods
@@ -117,6 +101,28 @@
                                                     multiplier:1.0
                                                       constant:-15.0f]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self.movieNameLabel
+                                                     attribute:NSLayoutAttributeHeight
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:nil
+                                                     attribute:NSLayoutAttributeHeight
+                                                    multiplier:1.0
+                                                      constant:60.0f]];
+}
+
+- (void)setupReviewDetailsViewConstraints {
+    self.reviewDetailsView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_reviewDetailsView]|"
+                                                                 options:0
+                                                                 metrics:nil
+                                                                   views:NSDictionaryOfVariableBindings(_reviewDetailsView)]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reviewDetailsView
+                                                     attribute:NSLayoutAttributeTop
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self.moviePosterImageView
+                                                     attribute:NSLayoutAttributeBottom
+                                                    multiplier:1.0f
+                                                      constant:0.0f]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reviewDetailsView
                                                      attribute:NSLayoutAttributeHeight
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:nil
