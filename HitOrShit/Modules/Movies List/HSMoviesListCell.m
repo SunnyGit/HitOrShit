@@ -11,6 +11,7 @@
 #import "HSMovieListData.h"
 #import "HSMovieStarRatingView.h"
 #import "UIImageView+AFNetworking.h"
+#import "UIFont+HSFont.h"
 
 @interface HSMoviesListCell ()
 
@@ -52,11 +53,14 @@
     self.contentContainerView.layer.shadowRadius = 0.5;
     self.contentContainerView.layer.shadowOpacity = 0.5;
     self.contentContainerView.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+    self.contentContainerView.layer.cornerRadius = 2.0;
     [self addSubview:self.contentContainerView];
 }
 
 - (void)setupBannerImagaeView {
     self.movieBannerImageView = [[UIImageView alloc] init];
+    [self.movieBannerImageView setContentMode:UIViewContentModeScaleAspectFill];
+    [self.movieBannerImageView setClipsToBounds:YES];
     self.movieBannerImageView.backgroundColor = [UIColor clearColor];
     [self.contentContainerView addSubview:self.movieBannerImageView];
 }
@@ -64,8 +68,8 @@
 - (void)setupTitleLabel {
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.text = NSLocalizedString(@"Sample Movie Name", @"");
-    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0f];
-    self.titleLabel.textColor = [UIColor colorWithWhite:70.0/255.0 alpha:1.0];
+    self.titleLabel.font = [UIFont regularApplicationFontWithSize:14.0f];
+    self.titleLabel.textColor = [UIColor colorWithWhite:0.0 alpha:1.0];
     self.titleLabel.numberOfLines = 2;
     [self.contentContainerView addSubview:self.titleLabel];
 }
@@ -73,8 +77,8 @@
 - (void)setupTypeLabel {
     self.typeLabel = [[UILabel alloc] init];
     self.typeLabel.text = NSLocalizedString(@"Sample Movie Name", @"");
-    self.typeLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:10.0f];
-    self.typeLabel.textColor = [UIColor colorWithWhite:70.0/255.0 alpha:1.0];
+    self.typeLabel.font = [UIFont regularApplicationFontWithSize:12.0f];
+    self.typeLabel.textColor = [UIColor colorWithWhite:85.0/255.0 alpha:1.0];
     self.typeLabel.numberOfLines = 1;
     [self.contentContainerView addSubview:self.typeLabel];
 }
@@ -203,7 +207,7 @@
                                                                              toItem:self.movieBannerImageView
                                                                           attribute:NSLayoutAttributeTrailing
                                                                          multiplier:1.0
-                                                                           constant:-5.0f]];
+                                                                           constant:4.0f]];
     
     [self.contentContainerView addConstraint:[NSLayoutConstraint constraintWithItem:self.ratingView
                                                                           attribute:NSLayoutAttributeWidth
