@@ -24,4 +24,12 @@
                                             }
                                         }];
 }
+
+- (void)writeAReviewWithData:(NSString *)reviewText
+              andWithMovieID:(NSString *)movieId
+                 withSuccess:(void(^)())completion
+              andWithFailure:(void(^)())failure {
+    [self.interactor writeAReviewWithData:reviewText
+                           andWithMovieID:movieId withSuccess:completion andWithFailure:failure];
+}
 @end

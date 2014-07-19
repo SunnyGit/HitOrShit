@@ -15,6 +15,11 @@
                            withSuccess:(void(^)(NSArray *movieReviewData))completion
                         andWithFailure:(void(^)(NSError *error, NSArray *localReviewData))failure;
 
+- (void)writeAReviewWithData:(NSString *)reviewText
+              andWithMovieID:(NSString *)movieId
+                 withSuccess:(void(^)())completion
+              andWithFailure:(void(^)())failure;
+
 
 - (NSArray *)movieReviewRecordsWithMovieId:(NSString *)movieID;
 

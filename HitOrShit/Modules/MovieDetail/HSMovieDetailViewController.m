@@ -40,7 +40,8 @@
     [self.navigationController.navigationBar setHidden:YES];
     [self setupBackButton];
     [self setupData];
-    [self fetchMovieReviewData];
+  //  [self fetchMovieReviewData];
+    [self writeAReviewWithReviewText:@"This is shit"];
 }
 
 - (void)fetchMovieReviewData {
@@ -51,6 +52,18 @@
     } andWithFailure:^(NSError *error, NSArray *localReviewData) {
         weakSelf.reviewCollection = localReviewData;
     }];
+}
+
+- (void)writeAReviewWithReviewText:(NSString *)reviewText {
+    __weak typeof(self) weakSelf = self;
+
+    [self.presenter writeAReviewWithData:reviewText
+                          andWithMovieID:self.movieData.movieId
+                             withSuccess:^{
+                                 [weakSelf fetchMovieReviewData];
+                             } andWithFailure:^{
+                                 //TODO show alert
+                             }];
 }
 
 - (void)setReviewCollection:(NSArray *)reviewCollection {
