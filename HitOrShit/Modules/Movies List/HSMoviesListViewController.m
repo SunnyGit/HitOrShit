@@ -42,15 +42,6 @@
     flowLayout.minimumInteritemSpacing = 6.0;
     flowLayout.sectionInset = UIEdgeInsetsMake(6.0, 6.0, 6.0, 6.0);
     self.moviesListCollectionView.collectionViewLayout = flowLayout;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:240.0/255.0
-                                                                              green:176.0/255.0
-                                                                               blue:23.0/255.0
-                                                                              alpha:0.5f];
- //   [self.navigationController.navigationBar setTranslucent:YES];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-
 }
 
 - (void)setNavigationBarLogo {

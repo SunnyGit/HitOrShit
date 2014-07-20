@@ -16,6 +16,9 @@
 #import "HSMovieDetailPresenter.h"
 #import "HSMovieDetailHeaderView.h"
 #import "HSMovieDetailHeaderViewData.h"
+#import "HSMovieDetailViewCell.h"
+#import "HSMovieDetailViewCellData.h"
+#import "HOSReview.h"
 
 @interface HSMovieDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -33,15 +36,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.detailCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
-    [self.detailCollectionView registerClass:[HSMovieDetailHeaderView class]
-                  forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                         withReuseIdentifier:NSStringFromClass([HSMovieDetailHeaderView class])];
-    [self.navigationController.navigationBar setHidden:YES];
+    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"HSMovieDetailViewCell"
+                                                          bundle:nil]
+                forCellWithReuseIdentifier:NSStringFromClass([HSMovieDetailViewCell class])];
+    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"HSMovieDetailHeaderView"
+                                                          bundle:nil]
+                forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                       withReuseIdentifier:NSStringFromClass([HSMovieDetailHeaderView class])];
     [self setupBackButton];
     [self setupData];
-  //  [self fetchMovieReviewData];
-    [self writeAReviewWithReviewText:@"This is shit"];
+   // [self writeAReviewWithReviewText:@"This is shit"];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setHidden:YES];
+    [self fetchMovieReviewData];
+    [self.detailCollectionView reloadData];
 }
 
 - (void)fetchMovieReviewData {
@@ -120,9 +131,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])
+    HSMovieDetailViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HSMovieDetailViewCell class])
                                                                            forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    cell.cellData = [self cellDataWithIndexPath:indexPath];
+    [cell updateSubViewsProperties];
     return cell;
 }
 
@@ -137,7 +149,7 @@
                                  atIndexPath:(NSIndexPath *)indexPath {
     HSMovieDetailHeaderView *view = nil;
     if (kind == UICollectionElementKindSectionHeader) {
-        view = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+        view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                                                   withReuseIdentifier:NSStringFromClass([HSMovieDetailHeaderView class])
                                                          forIndexPath:indexPath];
         view.headerData = [self headerViewData];
@@ -149,7 +161,20 @@
     HSMovieDetailHeaderViewData *headerViewData = [[HSMovieDetailHeaderViewData alloc] init];
     headerViewData.movieName = self.movieData.movieName;
     headerViewData.moviePostUrl = self.movieData.moviePosterLink;
+    headerViewData.reviewCount = [NSString stringWithFormat:@"%d",[self.reviewCollection count]];
+    headerViewData.average = 4.5;
     return headerViewData;
+}
+
+- (HSMovieDetailViewCellData *)cellDataWithIndexPath:(NSIndexPath *)indexPath {
+    HOSReview *review = [self.reviewCollection objectAtIndex:indexPath.row];
+    HSMovieDetailViewCellData *cellData = [[HSMovieDetailViewCellData alloc] init];
+    cellData.profileImageUrl = review.imageURL;
+    cellData.name = review.name;
+    cellData.reviewText = review.review_text;
+    cellData.rating = [review.start_count floatValue];
+    cellData.reviewDate = review.date;
+    return cellData;
 }
 
 @end

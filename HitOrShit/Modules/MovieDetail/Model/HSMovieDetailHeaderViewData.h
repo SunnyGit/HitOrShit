@@ -14,9 +14,7 @@
 
 @property (nonatomic, copy) NSString *movieName;
 
-@property (nonatomic, copy) NSString *movieCast;
-
-@property (nonatomic, copy) NSString *average;
+@property (nonatomic, assign) CGFloat average;
 
 @property (nonatomic, copy) NSString *reviewCount;
 
