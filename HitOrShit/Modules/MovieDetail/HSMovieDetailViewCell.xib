@@ -17,7 +17,7 @@
                         <rect key="frame" x="10" y="5" width="300" height="140"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yX1-Jg-YtW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="yX1-Jg-YtW">
                                 <rect key="frame" x="4" y="4" width="57" height="59"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -66,4 +66,7 @@
             </connections>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="defaultAvatar" width="80" height="80"/>
+    </resources>
 </document>
