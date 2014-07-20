@@ -28,6 +28,7 @@ PODS:
   - MagicalRecord (2.2):
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
+  - MBProgressHUD (0.8)
   - MMRecord (1.4.1):
     - MMRecord/Core
   - MMRecord/Core (1.4.1)
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - FlurrySDK (= 4.3.0)
   - HockeySDK (= 3.5.2)
   - MagicalRecord (~> 2.2)
+  - MBProgressHUD (~> 0.8)
   - MMRecord (~> 1.4.1)
 
 SPEC CHECKSUMS:
@@ -47,6 +49,7 @@ SPEC CHECKSUMS:
   FlurrySDK: aca93e0d48e78d8236b03e0ddd0c1a2a564ead3b
   HockeySDK: a971bdf56c4e549c05d76aa9283fcfc9f6ecaea3
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
   MMRecord: d97ae01093878067aff85dcbd90fb700605cc634
 
 COCOAPODS: 0.33.1

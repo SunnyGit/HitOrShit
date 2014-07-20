@@ -20,6 +20,8 @@
 #import "HSMovieDetailViewCellData.h"
 #import "HOSReview.h"
 
+#import "MBProgressHUD.h"
+
 @interface HSMovieDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *detailCollectionView;
@@ -61,25 +63,29 @@
 
 - (void)fetchMovieReviewData {
     __weak typeof(self) weakSelf = self;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Fetching Details";
     [self.presenter fetchMovieReviewDataForMovieId:self.movieData.movieId
      withSuccess:^(NSArray *movieReviewData) {
+         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
          weakSelf.reviewCollection = movieReviewData;
     } andWithFailure:^(NSError *error, NSArray *localReviewData) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         weakSelf.reviewCollection = localReviewData;
     }];
 }
 
-- (void)writeAReviewWithReviewText:(NSString *)reviewText {
-    __weak typeof(self) weakSelf = self;
-
-    [self.presenter writeAReviewWithData:reviewText
-                          andWithMovieID:self.movieData.movieId
-                             withSuccess:^{
-                                 [weakSelf fetchMovieReviewData];
-                             } andWithFailure:^{
-                                 //TODO show alert
-                             }];
-}
+//- (void)writeAReviewWithReviewText:(NSString *)reviewText {
+//    __weak typeof(self) weakSelf = self;
+//
+//    [self.presenter writeAReviewWithData:reviewText
+//                          andWithMovieID:self.movieData.movieId
+//                             withSuccess:^{
+//                                 [weakSelf fetchMovieReviewData];
+//                             } andWithFailure:^{
+//                                 //TODO show alert
+//                             }];
+//}
 
 - (void)setReviewCollection:(NSArray *)reviewCollection {
     _reviewCollection = reviewCollection;

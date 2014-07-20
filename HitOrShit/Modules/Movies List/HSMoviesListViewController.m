@@ -13,6 +13,9 @@
 #import "HSMoviesListPresenter.h"
 #import "HSMovieDetailViewController.h"
 
+#import "Constants.h"
+#import "MBProgressHUD.h"
+
 @interface HSMoviesListViewController ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *moviesListCollectionView;
@@ -27,12 +30,12 @@
     [self registerCells];
     [self setCollectionViewFlowLayout];
     [self setNavigationBarLogo];
+    [self addObservers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:NO];
-    [self fetchListData];
 }
 
 - (void)setCollectionViewFlowLayout {
@@ -54,17 +57,42 @@
     [self.navigationItem setLeftBarButtonItem:customItem];
 }
 
+- (void)addObservers {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(fetchListData)
+                                                 name:kRegistrationSuccessNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showFailureMessage)
+                                                 name:kRegistrationFailureNotification
+                                               object:nil];
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)registerCells {
     [self.moviesListCollectionView registerClass:[HSMoviesListCell class] forCellWithReuseIdentifier:NSStringFromClass([HSMoviesListCell class])];
 }
 
 - (void)fetchListData {
     __weak typeof(self) weakSelf = self;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"fetching Movie list";
     [self.presenter fecthMovieListDataWitSuccess:^(NSArray *movieListData) {
         weakSelf.movieListCollection = movieListData;
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
     } andWithFailure:^(NSError *error, NSArray *localMovieListData) {
         weakSelf.movieListCollection = localMovieListData;
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
     }];
+}
+
+- (void)showFailureMessage {
+    // TODO handle this
 }
 
 #pragma mark Setter Methods

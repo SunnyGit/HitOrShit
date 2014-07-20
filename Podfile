@@ -9,4 +9,5 @@ target :'HitOrShit' do
     pod 'MMRecord', '~> 1.4.1'
     pod 'MagicalRecord', '~> 2.2'
     pod 'AFNetworking', '~> 2.3'
+    pod 'MBProgressHUD', '~> 0.8'
 end

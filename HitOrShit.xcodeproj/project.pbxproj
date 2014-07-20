@@ -119,6 +119,7 @@
 		912DC1C8197BE2CB00AC3493 /* HSMovieDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSMovieDetailViewCell.xib; sourceTree = "<group>"; };
 		912DC1CA197BEAE900AC3493 /* HSMovieDetailViewCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailViewCellData.h; sourceTree = "<group>"; };
 		912DC1CB197BEAE900AC3493 /* HSMovieDetailViewCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailViewCellData.m; sourceTree = "<group>"; };
+		912DC1D0197C4CB000AC3493 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		912EB4C81975B87B00352726 /* HOSMovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSMovies.h; sourceTree = "<group>"; };
 		912EB4C91975B87B00352726 /* HOSMovies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSMovies.m; sourceTree = "<group>"; };
 		912EB4CB1975B88900352726 /* _HOSMovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HOSMovies.h; sourceTree = "<group>"; };
@@ -256,6 +257,7 @@
 				4834314D194C7838002CD868 /* InfoPlist.strings */,
 				48343150194C7838002CD868 /* main.m */,
 				48343152194C7838002CD868 /* HitOrShit-Prefix.pch */,
+				912DC1D0197C4CB000AC3493 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

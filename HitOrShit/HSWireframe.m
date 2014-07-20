@@ -22,8 +22,12 @@
 #import "HSLoginPresenter.h"
 #import "HSLoginInteractor.h"
 
+#import "MBProgressHUD.h"
+
 #import "HOSRegister.h"
 #import "HOSFBDetails.h"
+
+#import "Constants.h"
 
 @interface HSWireframe () <HSAuthorisationDelegate>
 
@@ -116,8 +120,8 @@
     [self showLoginScreenWithAnimation:YES];
 }
 
-- (void)registerForHitOrShitWithResultBlock:(void(^)(NSArray *records))resultBlock
-                               failureBlock:(void(^)(NSError *error))failureBlock {
+- (void)registerForHitOrShitWithSuccessBlock:(void(^)())successBlock
+                                failureBlock:(void(^)(NSError *error))failureBlock {
     HOSFBDetails *fbdetails = [HOSFBDetails MR_findFirst];
     NSDictionary *data = nil;
     NSString *fbImageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=",fbdetails.userid];
@@ -127,25 +131,23 @@
                  @"user_image":fbImageUrl};
     }
     [HOSRegister registerNewUserWithData:data
-                             resultBlock:^(NSArray *records) {
-                                 if (resultBlock) {
-                                     resultBlock(records);
-                                 }
-                             } failureBlock:^(NSError *error) {
-                                 if (failureBlock) {
-                                     failureBlock(error);
-                                 }
-                             }];
+                            successBlock:successBlock
+                            failureBlock:failureBlock];
 }
 
 - (void)userLoggedIn {
-    
-    [self registerForHitOrShitWithResultBlock:^(NSArray *records) {
-        [self dismissLoginScreen];
-        
+    [self dismissLoginScreen];
+    __weak typeof(self) weakSelf = self;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
+    hud.labelText = @"Resgistering to Mogamboo!";
+    [self registerForHitOrShitWithSuccessBlock:^{
+        [MBProgressHUD hideAllHUDsForView:weakSelf.window.rootViewController.view animated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kRegistrationSuccessNotification
+                                                            object:weakSelf];
     } failureBlock:^(NSError *error) {
-        [self dismissLoginScreen];
-
+        [MBProgressHUD hideAllHUDsForView:weakSelf.window.rootViewController.view animated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kRegistrationFailureNotification
+                                                            object:weakSelf];
     }];
 }
 

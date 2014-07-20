@@ -4,7 +4,7 @@
 // Custom logic goes here.
 
 + (void)registerNewUserWithData:(NSDictionary *)data
-                    resultBlock:(void(^)(NSArray *records))resultBlock
+                   successBlock:(void(^)())successBlock
                    failureBlock:(void(^)(NSError *error))failureBlock;
 
 @end
