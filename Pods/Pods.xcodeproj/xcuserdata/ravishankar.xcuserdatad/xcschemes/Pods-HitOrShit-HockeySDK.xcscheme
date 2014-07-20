@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E95016AB18164B3393298D5A"
+               BlueprintIdentifier = "330A33423CEF4B4FBB8C1239"
                BuildableName = "libPods-HitOrShit-HockeySDK.a"
                BlueprintName = "Pods-HitOrShit-HockeySDK"
                ReferencedContainer = "container:Pods.xcodeproj">

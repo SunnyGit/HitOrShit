@@ -21,7 +21,8 @@ static NSDateFormatter *HOSDateFormatter;
 + (NSDateFormatter *)dateFormatter {
     if (!HOSDateFormatter) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"]; // "2012-11-21T03:57:39Z"
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ssZ"]; // "2012-11-21T03:57:39Z"
+//        2014-07-17 17:47:46+00:00
         HOSDateFormatter = dateFormatter;
     }
     return HOSDateFormatter;

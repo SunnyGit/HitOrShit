@@ -166,7 +166,7 @@
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HSMovieDetailViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HSMovieDetailViewCell class])
                                                                            forIndexPath:indexPath];
-    cell.cellData = [self cellDataWithIndexPath:indexPath];
+    cell.cellData = [self.reviewCollection objectAtIndex:indexPath.row];
     [cell updateSubViewsProperties];
     return cell;
 }
@@ -194,20 +194,9 @@
     HSMovieDetailHeaderViewData *headerViewData = [[HSMovieDetailHeaderViewData alloc] init];
     headerViewData.movieName = self.movieData.movieName;
     headerViewData.moviePostUrl = self.movieData.moviePosterLink;
-    headerViewData.reviewCount = [NSString stringWithFormat:@"%d",[self.reviewCollection count]];
+    headerViewData.reviewCount = [NSString stringWithFormat:@"%lu",[self.reviewCollection count]];
     headerViewData.average = 4.5;
     return headerViewData;
-}
-
-- (HSMovieDetailViewCellData *)cellDataWithIndexPath:(NSIndexPath *)indexPath {
-    HOSReview *review = [self.reviewCollection objectAtIndex:indexPath.row];
-    HSMovieDetailViewCellData *cellData = [[HSMovieDetailViewCellData alloc] init];
-    cellData.profileImageUrl = review.imageURL;
-    cellData.name = review.name;
-    cellData.reviewText = review.review_text;
-    cellData.rating = [review.start_count floatValue];
-    cellData.reviewDate = review.date;
-    return cellData;
 }
 
 @end

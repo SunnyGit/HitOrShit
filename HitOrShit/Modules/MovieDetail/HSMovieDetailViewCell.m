@@ -40,7 +40,7 @@
 
 - (void)setCellData:(HSMovieDetailViewCellData *)cellData {
     _cellData = cellData;
-    [self.profileImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@small",cellData.profileImageUrl]]];
+    [self.profileImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@normal",cellData.profileImageUrl]]];
     self.userNameLabel.text = cellData.name;
     self.reviewDateLabel.text = cellData.reviewDate;
     self.ratingView.rating = cellData.rating;

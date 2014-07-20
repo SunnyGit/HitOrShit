@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HitOrShit-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HitOrShit-MMRecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,92 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>14E90BE213134C4082802BE1</key>
+		<key>0242E81422A34C3595A757B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>19CC19DB34F644DFAB8214EB</key>
+		<key>20505F8A57F342B7A2AA9B1D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20750B13A75741C68A02DA5C</key>
+		<key>2C00562667994975A3433F8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4123167E86F64B0FAE79F4AE</key>
+		<key>330A33423CEF4B4FBB8C1239</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55CC4583142148D8BEC3C944</key>
+		<key>5471E92B8BBB4CD8A2BC9787</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70C7DB6991FC46299ED32CC1</key>
+		<key>7388F9958E5D45188D9CDA05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>723C87705DB14528B6C30318</key>
+		<key>8262C20EE948463FA336A2B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7B8457C52CE44C61BD443ABC</key>
+		<key>952AF46CABE54DF39C1AFFEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8555A38AF8504AC1BBB4DA24</key>
+		<key>D0A664573DCC45D98CCB1E41</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8785881530E443A9A8B1E8B9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8C977213D282440B91A14BC8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AE790D71705848568A65ED17</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E26B6986BF6A400DA7AFE9E0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E6617FBA58014C749F00628A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E76B2E52060F4C9BB77EEF31</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E95016AB18164B3393298D5A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F9B55F56991244C58C9ADDAD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FBCD0EADDB304848B79019C7</key>
+		<key>F1C4A28E877C4B57BE840018</key>
 		<dict>
 			<key>primary</key>
 			<true/>

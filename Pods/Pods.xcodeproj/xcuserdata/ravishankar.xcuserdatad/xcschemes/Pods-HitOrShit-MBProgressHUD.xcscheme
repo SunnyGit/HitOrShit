@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7388F9958E5D45188D9CDA05"
-               BuildableName = "libPods-HitOrShit-MagicalRecord.a"
-               BlueprintName = "Pods-HitOrShit-MagicalRecord"
+               BlueprintIdentifier = "D0A664573DCC45D98CCB1E41"
+               BuildableName = "libPods-HitOrShit-MBProgressHUD.a"
+               BlueprintName = "Pods-HitOrShit-MBProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
