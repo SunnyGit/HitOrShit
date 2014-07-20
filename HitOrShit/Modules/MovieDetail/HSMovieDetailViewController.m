@@ -29,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *movieCastLabel;
 @property (strong, nonatomic) UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *movieNameLabel;
-
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, copy) NSArray *reviewCollection;
 
 @end
@@ -47,6 +47,7 @@
                        withReuseIdentifier:NSStringFromClass([HSMovieDetailHeaderView class])];
     [self setupBackButton];
     [self setupData];
+    [self addRefreshControl];
    // [self writeAReviewWithReviewText:@"This is shit"];
 }
 
@@ -57,21 +58,31 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:YES];
-    [self fetchMovieReviewData];
+    [self fetchMovieReviewDataWithHUD:YES];
     [self.detailCollectionView reloadData];
 }
 
-- (void)fetchMovieReviewData {
+- (void)fetchMovieReviewDataWithHUD:(BOOL)hudNecessary {
     __weak typeof(self) weakSelf = self;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Fetching Details";
+    if (hudNecessary) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Fetching Details";
+    }
+
     [self.presenter fetchMovieReviewDataForMovieId:self.movieData.movieId
      withSuccess:^(NSArray *movieReviewData) {
-         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+         if (hudNecessary) {
+             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+         } else {
+             [self.refreshControl endRefreshing];
+         }
          weakSelf.reviewCollection = movieReviewData;
     } andWithFailure:^(NSError *error, NSArray *localReviewData) {
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        weakSelf.reviewCollection = localReviewData;
+        if (hudNecessary) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        } else {
+            [self.refreshControl endRefreshing];
+        }        weakSelf.reviewCollection = localReviewData;
     }];
 }
 
@@ -106,6 +117,18 @@
 
 - (void)setupData {
     [self.movieBannerImageView setImageWithURL:[NSURL URLWithString:self.movieData.moviePosterLink]];
+}
+
+- (void)addRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor = [UIColor grayColor];
+    [self.refreshControl addTarget:self action:@selector(pullToRefreshTriggered) forControlEvents:UIControlEventValueChanged];
+    [self.detailCollectionView addSubview:self.refreshControl];
+    self.detailCollectionView.alwaysBounceVertical = YES;
+}
+
+- (void)pullToRefreshTriggered {
+    [self fetchMovieReviewDataWithHUD:NO];
 }
 
 #pragma Actions

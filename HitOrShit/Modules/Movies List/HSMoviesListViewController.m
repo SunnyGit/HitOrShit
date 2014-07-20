@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *moviesListCollectionView;
 @property (nonatomic, copy) NSArray *movieListCollection;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -31,6 +32,7 @@
     [self setCollectionViewFlowLayout];
     [self setNavigationBarLogo];
     [self addObservers];
+    [self addRefreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,7 +61,7 @@
 
 - (void)addObservers {
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(fetchListData)
+                                             selector:@selector(registerSucces)
                                                  name:kRegistrationSuccessNotification
                                                object:nil];
     
@@ -69,6 +71,22 @@
                                                object:nil];
 }
 
+- (void)addRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor = [UIColor grayColor];
+    [self.refreshControl addTarget:self action:@selector(pullToRefreshTriggered) forControlEvents:UIControlEventValueChanged];
+    [self.moviesListCollectionView addSubview:self.refreshControl];
+    self.moviesListCollectionView.alwaysBounceVertical = YES;
+}
+
+
+- (void)pullToRefreshTriggered {
+    [self fetchListDataWithHUD:NO];
+}
+
+- (void)registerSucces {
+    [self fetchListDataWithHUD:YES];
+}
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -78,16 +96,26 @@
     [self.moviesListCollectionView registerClass:[HSMoviesListCell class] forCellWithReuseIdentifier:NSStringFromClass([HSMoviesListCell class])];
 }
 
-- (void)fetchListData {
+- (void)fetchListDataWithHUD:(BOOL)hudNecessary {
     __weak typeof(self) weakSelf = self;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"fetching Movie list";
+    if (hudNecessary) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"fetching Movie list";
+    }
     [self.presenter fecthMovieListDataWitSuccess:^(NSArray *movieListData) {
         weakSelf.movieListCollection = movieListData;
-        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+        if (hudNecessary) {
+            [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+        } else {
+            [weakSelf.refreshControl endRefreshing];
+        }
     } andWithFailure:^(NSError *error, NSArray *localMovieListData) {
         weakSelf.movieListCollection = localMovieListData;
-        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+        if (hudNecessary) {
+            [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+        } else {
+            [weakSelf.refreshControl endRefreshing];
+        }
     }];
 }
 
