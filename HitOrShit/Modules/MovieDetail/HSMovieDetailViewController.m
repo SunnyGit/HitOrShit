@@ -86,17 +86,17 @@
     }];
 }
 
-//- (void)writeAReviewWithReviewText:(NSString *)reviewText {
-//    __weak typeof(self) weakSelf = self;
-//
-//    [self.presenter writeAReviewWithData:reviewText
-//                          andWithMovieID:self.movieData.movieId
-//                             withSuccess:^{
-//                                 [weakSelf fetchMovieReviewData];
-//                             } andWithFailure:^{
-//                                 //TODO show alert
-//                             }];
-//}
+- (void)writeAReviewWithReviewText:(NSString *)reviewText {
+    __weak typeof(self) weakSelf = self;
+
+    [self.presenter writeAReviewWithData:reviewText
+                          andWithMovieID:self.movieData.movieId
+                             withSuccess:^{
+                                 [weakSelf fetchMovieReviewDataWithHUD:YES];
+                             } andWithFailure:^(NSError *error) {
+                                 //
+                             }];
+}
 
 - (void)setReviewCollection:(NSArray *)reviewCollection {
     _reviewCollection = reviewCollection;

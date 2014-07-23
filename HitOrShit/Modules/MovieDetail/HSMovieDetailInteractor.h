@@ -18,7 +18,7 @@
 - (void)writeAReviewWithData:(NSString *)reviewText
               andWithMovieID:(NSString *)movieId
                  withSuccess:(void(^)())completion
-              andWithFailure:(void(^)())failure;
+              andWithFailure:(void(^)(NSError *error))failure;
 
 
 - (NSArray *)movieReviewRecordsWithMovieId:(NSString *)movieID;

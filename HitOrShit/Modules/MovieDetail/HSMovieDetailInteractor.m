@@ -49,7 +49,7 @@
 - (void)writeAReviewWithData:(NSString *)reviewText
               andWithMovieID:(NSString *)movieId
                  withSuccess:(void(^)())completion
-              andWithFailure:(void(^)())failure {
+              andWithFailure:(void(^)(NSError *))failure {
     NSDictionary *data = nil;
     HOSFBDetails *fbdetails = [HOSFBDetails MR_findFirst];
     HOSRegister *registrationDetails = [HOSRegister MR_findFirst];
@@ -74,7 +74,7 @@
                             }
                         } failureBlock:^(NSError *error) {
                             if (failure) {
-                                failure();
+                                failure(error);
                             }
                         }];
 }
