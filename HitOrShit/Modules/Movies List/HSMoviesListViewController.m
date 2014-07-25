@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *moviesListCollectionView;
 @property (nonatomic, copy) NSArray *movieListCollection;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UISearchBar *movieSearchBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *movieSearchButton;
+- (IBAction)toggleSearchBar:(id)sender;
 
 @end
 
@@ -38,6 +41,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:NO];
+    self.movieSearchBar.hidden = YES;
 }
 
 - (void)setCollectionViewFlowLayout {
@@ -134,6 +138,7 @@
 #pragma mark Delegate Methods
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.movieSearchBar resignFirstResponder];
     [self.presenter.wireframe pushMovieDetailViewControllerWithMovieListData:[self.movieListCollection objectAtIndex:indexPath.row]];
 }
 
@@ -152,5 +157,38 @@
     return cell;
 }
 
+
+- (IBAction)toggleSearchBar:(id)sender {
+    if ([self.movieSearchBar isHidden]) {
+        self.movieSearchBar.hidden = NO;
+        [self.movieSearchBar becomeFirstResponder];
+        [self setMoviesSearchBarHidden:NO];
+    } else {
+        [self.movieSearchBar resignFirstResponder];
+        [self setMoviesSearchBarHidden:YES];
+    }
+}
+
+- (void)setMoviesSearchBarHidden:(BOOL)hidden {
+    int multiplier = (hidden == YES) ? -1 : 1;
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.movieSearchBar setFrame:CGRectMake(self.movieSearchBar.frame.origin.x,
+                                                 self.movieSearchBar.frame.origin.y + (44.0 * multiplier),
+                                                 self.movieSearchBar.frame.size.width,
+                                                 self.movieSearchBar.frame.size.height)];
+        [self.moviesListCollectionView setFrame:CGRectMake(self.moviesListCollectionView.frame.origin.x,
+                                                           self.moviesListCollectionView.frame.origin.y + (44.0 * multiplier),
+                                                           self.moviesListCollectionView.frame.size.width,
+                                                           self.moviesListCollectionView.frame.size.height)];
+    } completion:^(BOOL finished) {
+        self.movieSearchBar.hidden = hidden;
+    }];
+}
+
+#pragma mark- Movie Search
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+}
 
 @end
