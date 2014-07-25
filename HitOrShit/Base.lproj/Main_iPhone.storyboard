@@ -125,28 +125,6 @@
             </objects>
             <point key="canvasLocation" x="470" y="64"/>
         </scene>
-        <!--Table View Controller - Master-->
-        <scene sceneID="VgW-fR-Quf">
-            <objects>
-                <tableViewController title="Master" id="pGg-6v-bdr" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Evm-fz-gtA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="pGg-6v-bdr" id="pcj-Hb-aJS"/>
-                            <outlet property="delegate" destination="pGg-6v-bdr" id="ABy-u8-tzH"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Movies List" id="tQt-TN-PWz"/>
-                    <connections>
-                        <outlet property="movieListTableView" destination="Evm-fz-gtA" id="Fed-zp-2m1"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="61" y="742"/>
-        </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="WZO-AP-qPd">
             <objects>
