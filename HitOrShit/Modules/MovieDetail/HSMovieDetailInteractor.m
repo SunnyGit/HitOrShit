@@ -58,7 +58,8 @@
                  @"name": fbdetails.name,
                  @"movie_id":movieId,
                  @"review":reviewText,
-                 @"token": registrationDetails.sucessToken
+                 @"token": registrationDetails.sucessToken,
+                 @"stars": @(4)
                  };
     }
    

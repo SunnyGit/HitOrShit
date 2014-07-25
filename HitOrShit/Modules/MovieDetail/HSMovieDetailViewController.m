@@ -22,7 +22,7 @@
 
 #import "MBProgressHUD.h"
 
-@interface HSMovieDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface HSMovieDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *detailCollectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *movieBannerImageView;
@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *movieNameLabel;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, copy) NSArray *reviewCollection;
+@property (weak, nonatomic) IBOutlet UIButton *dummySendButton;
+@property (weak, nonatomic) IBOutlet UITextField *dummyReviewTextField;
 
 @end
 
@@ -48,7 +50,16 @@
     [self setupBackButton];
     [self setupData];
     [self addRefreshControl];
-   // [self writeAReviewWithReviewText:@"This is shit"];
+}
+- (IBAction)sendButtonTapped:(id)sender {
+    [self writeAReviewWithReviewText:self.dummyReviewTextField.text];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self writeAReviewWithReviewText:self.dummyReviewTextField.text];
+    [self.dummyReviewTextField resignFirstResponder];
+    return YES;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

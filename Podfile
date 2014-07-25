@@ -10,4 +10,5 @@ target :'HitOrShit' do
     pod 'MagicalRecord', '~> 2.2'
     pod 'AFNetworking', '~> 2.3'
     pod 'MBProgressHUD', '~> 0.8'
+    pod 'GoogleAnalytics-iOS-SDK', '~> 3.0'
 end

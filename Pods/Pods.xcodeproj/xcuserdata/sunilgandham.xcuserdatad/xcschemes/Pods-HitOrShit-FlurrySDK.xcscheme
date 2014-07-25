@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5565BCB43EF44BEA8BFBDD08"
+               BlueprintIdentifier = "DA9F5DA7DED943B78091A506"
                BuildableName = "libPods-HitOrShit-FlurrySDK.a"
                BlueprintName = "Pods-HitOrShit-FlurrySDK"
                ReferencedContainer = "container:Pods.xcodeproj">
