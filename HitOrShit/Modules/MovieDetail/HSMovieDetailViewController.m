@@ -36,6 +36,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *rateButton;
 @property (nonatomic, strong) HSMovieReviewViewController *reviewController;
 
+@property (nonatomic, copy) NSString *currentReview;
+@property (nonatomic, assign) CGFloat rating;
+
 @end
 
 @implementation HSMovieDetailViewController
@@ -119,11 +122,15 @@
 
 - (void)writeAReviewWithReviewText:(NSString *)reviewText andStarCount:(CGFloat)starCount {
     __weak typeof(self) weakSelf = self;
-
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Posting Review ...";
     [self.presenter writeAReviewWithData:reviewText
                           andWithMovieID:self.movieData.movieId
                              andWithRating:starCount
                              withSuccess:^{
+                                 [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+                                 weakSelf.currentReview = nil;
+                                 weakSelf.rating = 1.0f;
                                  [weakSelf fetchMovieReviewDataWithHUD:YES];
                              } andWithFailure:^(NSError *error) {
                                  // TODO
@@ -237,6 +244,8 @@
 - (void)reviewController:(HSMovieReviewViewController *)reviewController
         userDidRateWithReviewText:(NSString *)reviewText
                   andRatingCount:(CGFloat)rating; {
+    self.currentReview = reviewText;
+    self.rating = rating;
     [self writeAReviewWithReviewText:reviewText andStarCount:rating];
 }
 

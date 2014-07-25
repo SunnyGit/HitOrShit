@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HitOrShit/Modules/MovieDetail/HSMovieDetailViewController.m"
-            timestampString = "428020968.555414"
+            timestampString = "428021375.549492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "-writeAReviewWithReviewText:andStarCount:"
             landmarkType = "5">
          </BreakpointContent>

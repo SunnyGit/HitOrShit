@@ -24,4 +24,8 @@
 
 @property (nonatomic, copy) NSString *movieName;
 
+@property (nonatomic, copy) NSString *reviewText;
+
+@property (nonatomic, assign) CGFloat rating;
+
 @end
