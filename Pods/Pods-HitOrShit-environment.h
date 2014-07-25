@@ -108,3 +108,9 @@
 #define COCOAPODS_VERSION_MINOR_MagicalRecord_Core 2
 #define COCOAPODS_VERSION_PATCH_MagicalRecord_Core 0
 
+// MaryPopin
+#define COCOAPODS_POD_AVAILABLE_MaryPopin
+#define COCOAPODS_VERSION_MAJOR_MaryPopin 1
+#define COCOAPODS_VERSION_MINOR_MaryPopin 4
+#define COCOAPODS_VERSION_PATCH_MaryPopin 1
+

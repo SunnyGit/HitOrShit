@@ -46,20 +46,21 @@
     return [HOSReview MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"movie_id=%@",movieID]];
 }
 
+
 - (void)writeAReviewWithData:(NSString *)reviewText
               andWithMovieID:(NSString *)movieId
+               andWithRating:(CGFloat)rating
                  withSuccess:(void(^)())completion
-              andWithFailure:(void(^)(NSError *))failure {
+              andWithFailure:(void(^)(NSError *error))failure {
     NSDictionary *data = nil;
     HOSFBDetails *fbdetails = [HOSFBDetails MR_findFirst];
     HOSRegister *registrationDetails = [HOSRegister MR_findFirst];
     if (fbdetails != nil && registrationDetails != nil && movieId != nil && reviewText != nil) {
         data = @{@"user_id": fbdetails.userid,
-                 @"name": fbdetails.name,
                  @"movie_id":movieId,
                  @"review":reviewText,
                  @"token": registrationDetails.sucessToken,
-                 @"stars": @(4)
+                 @"stars": @(rating)
                  };
     }
    

@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class HSMovieReviewViewController;
+
+@protocol HSMovieReviewViewControllerDelegate <NSObject>
+
+- (void)reviewController:(HSMovieReviewViewController *)reviewController
+            userDidRateWithReviewText:(NSString *)reviewText
+                       andRatingCount:(CGFloat)rating;
+
+@end
+
 @interface HSMovieReviewViewController : UIViewController
+
+@property (nonatomic, weak) id <HSMovieReviewViewControllerDelegate> delegate;
+
+@property (nonatomic, copy) NSString *movieName;
 
 @end

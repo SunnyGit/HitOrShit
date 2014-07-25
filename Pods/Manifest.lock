@@ -29,6 +29,7 @@ PODS:
   - MagicalRecord (2.2):
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
+  - MaryPopin (1.4.1)
   - MBProgressHUD (0.8)
   - MMRecord (1.4.1):
     - MMRecord/Core
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - GoogleAnalytics-iOS-SDK (~> 3.0)
   - HockeySDK (= 3.5.2)
   - MagicalRecord (~> 2.2)
+  - MaryPopin (~> 1.4)
   - MBProgressHUD (~> 0.8)
   - MMRecord (~> 1.4.1)
 
@@ -52,6 +54,7 @@ SPEC CHECKSUMS:
   GoogleAnalytics-iOS-SDK: a3206c68ee5f2a014ed67383d1f779072b653988
   HockeySDK: a971bdf56c4e549c05d76aa9283fcfc9f6ecaea3
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  MaryPopin: f460c3040dbd2a18f730538f03c7dd1714fa0931
   MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
   MMRecord: d97ae01093878067aff85dcbd90fb700605cc634
 

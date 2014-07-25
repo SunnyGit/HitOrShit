@@ -29,12 +29,17 @@
                                         }];
 }
 
+
 - (void)writeAReviewWithData:(NSString *)reviewText
               andWithMovieID:(NSString *)movieId
+               andWithRating:(CGFloat)rating
                  withSuccess:(void(^)())completion
-              andWithFailure:(void(^)(NSError *))failure {
+              andWithFailure:(void(^)(NSError *error))failure; {
     [self.interactor writeAReviewWithData:reviewText
-                           andWithMovieID:movieId withSuccess:completion andWithFailure:failure];
+                           andWithMovieID:movieId
+                            andWithRating:rating
+                              withSuccess:completion
+                           andWithFailure:failure];
 }
 
 - (NSArray *)prepareMovieReviewListDataForView:(NSArray *)movieReviewData {

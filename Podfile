@@ -11,4 +11,5 @@ target :'HitOrShit' do
     pod 'AFNetworking', '~> 2.3'
     pod 'MBProgressHUD', '~> 0.8'
     pod 'GoogleAnalytics-iOS-SDK', '~> 3.0'
+    pod 'MaryPopin', '~> 1.4'
 end

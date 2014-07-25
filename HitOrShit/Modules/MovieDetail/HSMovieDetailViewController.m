@@ -19,10 +19,12 @@
 #import "HSMovieDetailViewCell.h"
 #import "HSMovieDetailViewCellData.h"
 #import "HOSReview.h"
+#import "HSMovieReviewViewController.h"
+#import "UIViewController+MaryPopin.h"
 
 #import "MBProgressHUD.h"
 
-@interface HSMovieDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UITextFieldDelegate>
+@interface HSMovieDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,HSMovieReviewViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *detailCollectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *movieBannerImageView;
@@ -31,10 +33,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *movieNameLabel;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, copy) NSArray *reviewCollection;
-@property (weak, nonatomic) IBOutlet UIButton *dummySendButton;
-@property (weak, nonatomic) IBOutlet UITextField *dummyReviewTextField;
 @property (weak, nonatomic) IBOutlet UIButton *rateButton;
-@property (weak, nonatomic) IBOutlet UIView *reviewContainerView;
+@property (nonatomic, strong) HSMovieReviewViewController *reviewController;
 
 @end
 
@@ -42,8 +42,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view bringSubviewToFront:self.reviewContainerView];
-    self.reviewContainerView.hidden = YES;
     self.screenName = @"Movie Detail Screen";
     [self.detailCollectionView registerNib:[UINib nibWithNibName:@"HSMovieDetailViewCell"
                                                           bundle:nil]
@@ -57,19 +55,31 @@
     [self addRefreshControl];
     [self.view bringSubviewToFront:self.rateButton];
 }
-- (IBAction)sendButtonTapped:(id)sender {
-    [self writeAReviewWithReviewText:self.dummyReviewTextField.text];
-}
+
 - (IBAction)rateButtonTapped:(id)sender {
-    [self.view bringSubviewToFront:self.reviewContainerView];
-    self.reviewContainerView.hidden = NO;
-}
-
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self writeAReviewWithReviewText:self.dummyReviewTextField.text];
-    [self.dummyReviewTextField resignFirstResponder];
-    return YES;
+    self.reviewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HSMovieReviewViewController"];
+    [self.reviewController setPopinTransitionStyle:BKTPopinTransitionStyleSlide];
+    self.reviewController.movieName = self.movieData.movieName;
+    self.reviewController.delegate = self;
+    //Create a blur parameters object to configure background blur
+    BKTBlurParameters *blurParameters = [BKTBlurParameters new];
+    blurParameters.alpha = 1.0f;
+    blurParameters.radius = 8.0f;
+    blurParameters.saturationDeltaFactor = 1.8f;
+    blurParameters.tintColor = [UIColor colorWithRed:0.966 green:0.851 blue:0.038 alpha:0.2];
+    [self.reviewController setBlurParameters:blurParameters];
+    
+    //Add option for a blurry background
+    [self.reviewController setPopinOptions:[self.reviewController popinOptions]|BKTPopinBlurryDimmingView];
+    
+    
+    [self.reviewController setPreferedPopinContentSize:CGSizeMake(300.0f, 270.0f)];
+    
+    //Set popin transition direction
+    [self.reviewController setPopinTransitionDirection:BKTPopinTransitionDirectionTop];
+    [self presentPopinController:self.reviewController animated:YES completion:^{
+        NSLog(@"Popin presented !");
+    }];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -107,15 +117,16 @@
     }];
 }
 
-- (void)writeAReviewWithReviewText:(NSString *)reviewText {
+- (void)writeAReviewWithReviewText:(NSString *)reviewText andStarCount:(CGFloat)starCount {
     __weak typeof(self) weakSelf = self;
 
     [self.presenter writeAReviewWithData:reviewText
                           andWithMovieID:self.movieData.movieId
+                             andWithRating:starCount
                              withSuccess:^{
                                  [weakSelf fetchMovieReviewDataWithHUD:YES];
                              } andWithFailure:^(NSError *error) {
-                                 //
+                                 // TODO
                              }];
 }
 
@@ -218,6 +229,15 @@
     headerViewData.reviewCount = [NSString stringWithFormat:@"%lu",[self.reviewCollection count]];
     headerViewData.average = 4.5;
     return headerViewData;
+}
+
+#pragma mark delegate methods
+
+
+- (void)reviewController:(HSMovieReviewViewController *)reviewController
+        userDidRateWithReviewText:(NSString *)reviewText
+                  andRatingCount:(CGFloat)rating; {
+    [self writeAReviewWithReviewText:reviewText andStarCount:rating];
 }
 
 @end
