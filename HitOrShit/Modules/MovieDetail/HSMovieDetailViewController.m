@@ -33,6 +33,8 @@
 @property (nonatomic, copy) NSArray *reviewCollection;
 @property (weak, nonatomic) IBOutlet UIButton *dummySendButton;
 @property (weak, nonatomic) IBOutlet UITextField *dummyReviewTextField;
+@property (weak, nonatomic) IBOutlet UIButton *rateButton;
+@property (weak, nonatomic) IBOutlet UIView *reviewContainerView;
 
 @end
 
@@ -40,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view bringSubviewToFront:self.reviewContainerView];
+    self.reviewContainerView.hidden = YES;
     self.screenName = @"Movie Detail Screen";
     [self.detailCollectionView registerNib:[UINib nibWithNibName:@"HSMovieDetailViewCell"
                                                           bundle:nil]
@@ -51,9 +55,14 @@
     [self setupBackButton];
     [self setupData];
     [self addRefreshControl];
+    [self.view bringSubviewToFront:self.rateButton];
 }
 - (IBAction)sendButtonTapped:(id)sender {
     [self writeAReviewWithReviewText:self.dummyReviewTextField.text];
+}
+- (IBAction)rateButtonTapped:(id)sender {
+    [self.view bringSubviewToFront:self.reviewContainerView];
+    self.reviewContainerView.hidden = NO;
 }
 
 

@@ -64,6 +64,7 @@
 		915FDD4A1969CF1B00B8F173 /* HSMoviesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD3F1969CF1B00B8F173 /* HSMoviesListPresenter.m */; };
 		915FDD4B1969CF1B00B8F173 /* HSMoviesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD411969CF1B00B8F173 /* HSMoviesListViewController.m */; };
 		915FDD4E1969CF4000B8F173 /* HSLiveServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 915FDD4D1969CF4000B8F173 /* HSLiveServer.m */; };
+		9196384E1982FFB400277385 /* HSMovieReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9196384D1982FFB400277385 /* HSMovieReviewViewController.m */; };
 		91B9862619780D6900E4D580 /* HOSReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B9862519780D6900E4D580 /* HOSReview.m */; };
 		91B9862919780D7200E4D580 /* _HOSReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B9862819780D7200E4D580 /* _HOSReview.m */; };
 		91B9862C197829F200E4D580 /* HSMovieDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B9862B197829F200E4D580 /* HSMovieDetailPresenter.m */; };
@@ -155,6 +156,8 @@
 		915FDD411969CF1B00B8F173 /* HSMoviesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMoviesListViewController.m; sourceTree = "<group>"; };
 		915FDD4C1969CF4000B8F173 /* HSLiveServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLiveServer.h; sourceTree = "<group>"; };
 		915FDD4D1969CF4000B8F173 /* HSLiveServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLiveServer.m; sourceTree = "<group>"; };
+		9196384C1982FFB400277385 /* HSMovieReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieReviewViewController.h; sourceTree = "<group>"; };
+		9196384D1982FFB400277385 /* HSMovieReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieReviewViewController.m; sourceTree = "<group>"; };
 		919B4A7C8F9B4C16A2C783A8 /* Pods-HitOrShit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitOrShit.xcconfig"; path = "Pods/Pods-HitOrShit.xcconfig"; sourceTree = "<group>"; };
 		91B9862419780D6800E4D580 /* HOSReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSReview.h; sourceTree = "<group>"; };
 		91B9862519780D6900E4D580 /* HOSReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSReview.m; sourceTree = "<group>"; };
@@ -342,6 +345,7 @@
 		915FDD2A1969CF1B00B8F173 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9196384B1982FFA400277385 /* MovieReview */,
 				48AC97281979AB7500707A66 /* Style */,
 				915FDD2D1969CF1B00B8F173 /* Login */,
 				915FDD341969CF1B00B8F173 /* MovieDetail */,
@@ -409,6 +413,15 @@
 				48AC97251979A9ED00707A66 /* ProximaNova-Regular.otf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9196384B1982FFA400277385 /* MovieReview */ = {
+			isa = PBXGroup;
+			children = (
+				9196384C1982FFB400277385 /* HSMovieReviewViewController.h */,
+				9196384D1982FFB400277385 /* HSMovieReviewViewController.m */,
+			);
+			path = MovieReview;
 			sourceTree = "<group>";
 		};
 		91BE96A1196DDAA800FAE6EE /* Networking */ = {
@@ -606,6 +619,7 @@
 				91BE96A4196DDC4300FAE6EE /* HOSLiveSessionManager.m in Sources */,
 				91B9862919780D7200E4D580 /* _HOSReview.m in Sources */,
 				915FDD451969CF1B00B8F173 /* HSLoginViewController.m in Sources */,
+				9196384E1982FFB400277385 /* HSMovieReviewViewController.m in Sources */,
 				915FDD2319688AAC00B8F173 /* _HOSRegister.m in Sources */,
 				912EB4CA1975B87B00352726 /* HOSMovies.m in Sources */,
 				48FFC3D21957210900AEA698 /* HSAuthorisation.m in Sources */,
