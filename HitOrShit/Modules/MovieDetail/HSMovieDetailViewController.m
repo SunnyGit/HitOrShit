@@ -40,6 +40,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.screenName = @"Movie Detail Screen";
     [self.detailCollectionView registerNib:[UINib nibWithNibName:@"HSMovieDetailViewCell"
                                                           bundle:nil]
                 forCellWithReuseIdentifier:NSStringFromClass([HSMovieDetailViewCell class])];

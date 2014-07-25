@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.screenName = @"Login Screen Name";
     [self setBorderToButton];
     [self setFontsToSubview];
 }

@@ -13,6 +13,7 @@
 #import "MMRecord.h"
 #import "HSLiveServer.h"
 #import "HSAuthorisation.h"
+#import "GAI.h"
 #import "Constants.h"
 
 @interface HSAppDelegate ()
@@ -26,7 +27,21 @@
     self.wireframe = [[HSWireframe alloc] initWithWindow:self.window];
     [MagicalRecord setupAutoMigratingCoreDataStack];
     [MMRecord registerServerClass:[HSLiveServer class]];
+    [self setupGoogleAnalytics];
     return YES;
+}
+
+- (void)setupGoogleAnalytics {
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-53223623-1"];
 }
 
 - (BOOL)application:(UIApplication *)application

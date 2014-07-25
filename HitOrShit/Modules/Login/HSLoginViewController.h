@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GAI.h"
+
 @class HSLoginPresenter;
 
-@interface HSLoginViewController : UIViewController
+@interface HSLoginViewController : GAITrackedViewController
 
 @property (strong, nonatomic) HSLoginPresenter *presenter;
 

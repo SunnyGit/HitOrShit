@@ -15,6 +15,7 @@
 
 #import "Constants.h"
 #import "MBProgressHUD.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface HSMoviesListViewController ()
 
@@ -28,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.screenName = @"Movie List View";
     [self registerCells];
     [self setCollectionViewFlowLayout];
     [self setNavigationBarLogo];
@@ -134,7 +136,13 @@
 #pragma mark Delegate Methods
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self.presenter.wireframe pushMovieDetailViewControllerWithMovieListData:[self.movieListCollection objectAtIndex:indexPath.row]];
+    HSMovieListData *movieData = [self.movieListCollection objectAtIndex:indexPath.row];
+    self.tracker =  [[GAI sharedInstance] defaultTracker];
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                               action:@"cell_selected"
+                                                                label:movieData.movieName
+                                                                value:nil] build]];
+    [self.presenter.wireframe pushMovieDetailViewControllerWithMovieListData:movieData];
 }
 
 

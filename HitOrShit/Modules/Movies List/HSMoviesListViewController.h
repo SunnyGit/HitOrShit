@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GAI.h"
+
 @class HSMoviesListPresenter;
 
-@interface HSMoviesListViewController : UIViewController
+@interface HSMoviesListViewController : GAITrackedViewController
 
 @property (strong, nonatomic) HSMoviesListPresenter *presenter;
 

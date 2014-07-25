@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GAI.h"
+
 @class HSMovieListData;
 @class HSMovieDetailPresenter;
 
-@interface HSMovieDetailViewController : UIViewController
+@interface HSMovieDetailViewController : GAITrackedViewController
 
 @property (nonatomic, strong) HSMovieListData *movieData;
 
