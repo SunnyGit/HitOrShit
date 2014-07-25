@@ -125,10 +125,10 @@ typedef NS_ENUM(NSInteger, authorisationType) {
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
         [FBSession.activeSession closeAndClearTokenInformation];
     } else {
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"email", @"user_friends"]
-                                           allowLoginUI:YES
-                                      completionHandler:
-         ^(FBSession *session, FBSessionState state, NSError *error) {
+        [[[FBSession activeSession]
+          initWithPermissions:@[@"public_profile", @"email", @"user_friends"]]
+         openWithBehavior:FBSessionLoginBehaviorUseSystemAccountIfPresent
+         completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
              [self sessionStateChanged:session state:state error:error];
          }];
     }
