@@ -155,7 +155,7 @@
 }
 
 - (void)setupData {
-    [self.movieBannerImageView setImageWithURL:[NSURL URLWithString:self.movieData.moviePosterLink]];
+    [self.movieBannerImageView setImageWithURL:[NSURL URLWithString:self.movieData.moviePosterLink] placeholderImage:nil];
 }
 
 - (void)addRefreshControl {

@@ -9,6 +9,7 @@ const struct HOSReviewAttributes HOSReviewAttributes = {
 	.imageURL = @"imageURL",
 	.movie_id = @"movie_id",
 	.name = @"name",
+	.review_id = @"review_id",
 	.review_text = @"review_text",
 	.start_count = @"start_count",
 };
@@ -47,6 +48,11 @@ const struct HOSReviewFetchedProperties HOSReviewFetchedProperties = {
 	
 	if ([key isEqualToString:@"heartsValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"hearts"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"review_idValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"review_id"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -111,6 +117,32 @@ const struct HOSReviewFetchedProperties HOSReviewFetchedProperties = {
 
 @dynamic name;
 
+
+
+
+
+
+@dynamic review_id;
+
+
+
+- (int16_t)review_idValue {
+	NSNumber *result = [self review_id];
+	return [result shortValue];
+}
+
+- (void)setReview_idValue:(int16_t)value_ {
+	[self setReview_id:[NSNumber numberWithShort:value_]];
+}
+
+- (int16_t)primitiveReview_idValue {
+	NSNumber *result = [self primitiveReview_id];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveReview_idValue:(int16_t)value_ {
+	[self setPrimitiveReview_id:[NSNumber numberWithShort:value_]];
+}
 
 
 

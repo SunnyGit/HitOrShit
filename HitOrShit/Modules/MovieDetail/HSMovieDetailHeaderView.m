@@ -30,7 +30,7 @@
 - (void)setHeaderData:(HSMovieDetailHeaderViewData *)headerData {
     _headerData = headerData;
     self.movieNameLabel.text = headerData.movieName;
-    [self.moviePosterImageView setImageWithURL:[NSURL URLWithString:headerData.moviePostUrl]];
+    [self.moviePosterImageView setImageWithURL:[NSURL URLWithString:headerData.moviePostUrl] placeholderImage:nil];
     self.ratingAvergaeValueLabel.text = [NSString stringWithFormat:@"%.1f",headerData.average];
     self.ratingView.canEdit = NO;
     self.ratingView.maxAllowedRating = 5;

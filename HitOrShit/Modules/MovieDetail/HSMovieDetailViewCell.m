@@ -32,7 +32,7 @@
     self.cellcontentView.layer.cornerRadius = 3.0f;
     self.profileImageView.layer.cornerRadius = 30.0f;
     self.ratingView.maxAllowedRating = 5;
-    self.ratingView.rating = 3.5;
+    self.ratingView.canEdit = NO;
     self.ratingView.backgroundColor = [UIColor clearColor];
 }
 
@@ -40,7 +40,7 @@
 
 - (void)setCellData:(HSMovieDetailViewCellData *)cellData {
     _cellData = cellData;
-    [self.profileImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@normal",cellData.profileImageUrl]]];
+    [self.profileImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@normal",cellData.profileImageUrl]] placeholderImage:[UIImage imageNamed:@"defaultAvatar.png"]];
     self.userNameLabel.text = cellData.name;
     self.reviewDateLabel.text = cellData.reviewDate;
     self.ratingView.rating = cellData.rating;

@@ -23,8 +23,9 @@
                                                 completion(reviewArray);
                                             }
                                         } andWithFailure:^(NSError *error, NSArray *localReviewData) {
+                                             NSArray *reviewArray = [self prepareMovieReviewListDataForView:localReviewData];
                                             if (failure) {
-                                                failure(error,localReviewData);
+                                                failure(error,reviewArray);
                                             }
                                         }];
 }

@@ -265,7 +265,7 @@
 
 - (void)setMovieListData:(HSMovieListData *)movieListData {
     _movieListData = movieListData;
-    [self.movieBannerImageView setImageWithURL:[NSURL URLWithString:movieListData.moviePosterLink]];
+    [self.movieBannerImageView setImageWithURL:[NSURL URLWithString:movieListData.moviePosterLink] placeholderImage:nil];
     self.titleLabel.text = movieListData.movieName;
     self.typeLabel.text = movieListData.movieGenre;
     self.ratingView.rating = 3.5;

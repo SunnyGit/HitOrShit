@@ -21,10 +21,13 @@
     
     HOSFBDetails *fbdetails = [HOSFBDetails MR_findFirst];
     HOSRegister *registrationDetails = [HOSRegister MR_findFirst];
+    NSDictionary *data = nil;
     
-    NSDictionary *data = @{@"user_id" : fbdetails.userid,
-                           @"movie_id" : movieId,
-                           @"token" : registrationDetails.sucessToken};
+    if (fbdetails.userid != nil && registrationDetails.sucessToken != nil) {
+        data = @{@"user_id" : fbdetails.userid,
+                 @"movie_id" : movieId,
+                 @"token" : registrationDetails.sucessToken};
+    }
     
     [HOSReview startRequestWithURN:@"/movie_details"
                               data:data
@@ -55,7 +58,7 @@
     NSDictionary *data = nil;
     HOSFBDetails *fbdetails = [HOSFBDetails MR_findFirst];
     HOSRegister *registrationDetails = [HOSRegister MR_findFirst];
-    if (fbdetails != nil && registrationDetails != nil && movieId != nil && reviewText != nil) {
+    if (fbdetails.userid != nil && registrationDetails.sucessToken != nil && movieId != nil && reviewText != nil) {
         data = @{@"user_id": fbdetails.userid,
                  @"movie_id":movieId,
                  @"review":reviewText,

@@ -4,18 +4,28 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HitOrShit/Modules/MovieDetail/HSMovieDetailInteractor.m"
-            timestampString = "428020841.741999"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HitOrShit/Modules/MovieDetail/HSMovieDetailPresenter.m"
+            timestampString = "428024650.759128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-writeAReviewWithData:andWithMovieID:andWithRating:withSuccess:andWithFailure:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-reviewListDataWithReview:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,46 +35,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HitOrShit/Modules/MovieDetail/HSMovieDetailViewController.m"
-            timestampString = "428021375.549492"
+            filePath = "HitOrShit/Modules/MovieDetail/HSMovieDetailPresenter.m"
+            timestampString = "428024660.697836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-writeAReviewWithReviewText:andStarCount:"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-reviewListDataWithReview:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HitOrShit/Modules/Movies List/HSMoviesListViewController.m"
-            timestampString = "428011869.36469"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "@implementation HSMoviesListViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HitOrShit/Modules/Movies List/HSMoviesListViewController.m"
-            timestampString = "428011871.179768"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "@implementation HSMoviesListViewController"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

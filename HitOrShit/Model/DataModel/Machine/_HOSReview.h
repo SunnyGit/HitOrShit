@@ -10,6 +10,7 @@ extern const struct HOSReviewAttributes {
 	__unsafe_unretained NSString *imageURL;
 	__unsafe_unretained NSString *movie_id;
 	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *review_id;
 	__unsafe_unretained NSString *review_text;
 	__unsafe_unretained NSString *start_count;
 } HOSReviewAttributes;
@@ -19,6 +20,7 @@ extern const struct HOSReviewRelationships {
 
 extern const struct HOSReviewFetchedProperties {
 } HOSReviewFetchedProperties;
+
 
 
 
@@ -96,6 +98,20 @@ extern const struct HOSReviewFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSNumber* review_id;
+
+
+
+@property int16_t review_idValue;
+- (int16_t)review_idValue;
+- (void)setReview_idValue:(int16_t)value_;
+
+//- (BOOL)validateReview_id:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
 @property (nonatomic, strong) NSString* review_text;
 
 
@@ -159,6 +175,15 @@ extern const struct HOSReviewFetchedProperties {
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
+
+
+
+
+- (NSNumber*)primitiveReview_id;
+- (void)setPrimitiveReview_id:(NSNumber*)value;
+
+- (int16_t)primitiveReview_idValue;
+- (void)setPrimitiveReview_idValue:(int16_t)value_;
 
 
 
