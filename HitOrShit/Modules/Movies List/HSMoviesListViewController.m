@@ -21,6 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *moviesListCollectionView;
 @property (nonatomic, copy) NSArray *movieListCollection;
+@property (nonatomic, copy) NSArray *filteredMovieListCollection;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UISearchBar *movieSearchBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *movieSearchButton;
@@ -43,7 +44,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:NO];
-    self.movieSearchBar.hidden = YES;
+    [self hideMovieSearchBarWithAnimation:NO];
+    [self.moviesListCollectionView reloadData];
 }
 
 - (void)setCollectionViewFlowLayout {
@@ -110,6 +112,7 @@
     }
     [self.presenter fecthMovieListDataWitSuccess:^(NSArray *movieListData) {
         weakSelf.movieListCollection = movieListData;
+        weakSelf.filteredMovieListCollection = weakSelf.movieListCollection;
         if (hudNecessary) {
             [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
         } else {
@@ -117,6 +120,7 @@
         }
     } andWithFailure:^(NSError *error, NSArray *localMovieListData) {
         weakSelf.movieListCollection = localMovieListData;
+        weakSelf.filteredMovieListCollection = weakSelf.movieListCollection;
         if (hudNecessary) {
             [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
         } else {
@@ -140,12 +144,14 @@
 #pragma mark Delegate Methods
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    HSMovieListData *movieData = [self.movieListCollection objectAtIndex:indexPath.row];
+    HSMovieListData *movieData = [self.filteredMovieListCollection objectAtIndex:indexPath.row];
     self.tracker =  [[GAI sharedInstance] defaultTracker];
     [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
                                                                action:@"cell_selected"
                                                                 label:movieData.movieName
                                                                 value:nil] build]];
+    [self.movieSearchBar resignFirstResponder];
+    self.filteredMovieListCollection = self.movieListCollection;
     [self.presenter.wireframe pushMovieDetailViewControllerWithMovieListData:movieData];
 }
 
@@ -153,13 +159,13 @@
 #pragma mark DataSource Methods
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.movieListCollection count];
+    return [self.filteredMovieListCollection count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HSMoviesListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HSMoviesListCell class]) forIndexPath:indexPath];
     
-    HSMovieListData *listData = [self.movieListCollection objectAtIndex:indexPath.row];
+    HSMovieListData *listData = [self.filteredMovieListCollection objectAtIndex:indexPath.row];
     cell.movieListData = listData;
     return cell;
 }
@@ -168,34 +174,60 @@
 - (IBAction)toggleSearchBar:(id)sender {
     if ([self.movieSearchBar isHidden]) {
         self.movieSearchBar.hidden = NO;
-        [self.movieSearchBar becomeFirstResponder];
-        [self setMoviesSearchBarHidden:NO];
+        self.movieSearchBar.text = @"";
+        [self showMovieSearchBar];
     } else {
-        [self.movieSearchBar resignFirstResponder];
-        [self setMoviesSearchBarHidden:YES];
+        [self hideMovieSearchBarWithAnimation:YES];
     }
 }
 
-- (void)setMoviesSearchBarHidden:(BOOL)hidden {
-    int multiplier = (hidden == YES) ? -1 : 1;
+- (void)showMovieSearchBar {
+    [self.movieSearchBar becomeFirstResponder];
     [UIView animateWithDuration:0.5 animations:^{
         [self.movieSearchBar setFrame:CGRectMake(self.movieSearchBar.frame.origin.x,
-                                                 self.movieSearchBar.frame.origin.y + (44.0 * multiplier),
+                                                 0.0,
                                                  self.movieSearchBar.frame.size.width,
                                                  self.movieSearchBar.frame.size.height)];
         [self.moviesListCollectionView setFrame:CGRectMake(self.moviesListCollectionView.frame.origin.x,
-                                                           self.moviesListCollectionView.frame.origin.y + (44.0 * multiplier),
+                                                           44.0,
                                                            self.moviesListCollectionView.frame.size.width,
                                                            self.moviesListCollectionView.frame.size.height)];
-    } completion:^(BOOL finished) {
-        self.movieSearchBar.hidden = hidden;
-    }];
+    } completion:nil];
+}
+
+- (void)hideMovieSearchBarWithAnimation:(BOOL)animate {
+    CGFloat animationDuration = (animate == YES) ? 0.5 : 0.0;
+    [self.movieSearchBar resignFirstResponder];
+    [UIView animateWithDuration:animationDuration
+                     animations:^{
+                         [self.movieSearchBar setFrame:CGRectMake(self.movieSearchBar.frame.origin.x,
+                                                                  -44.0,
+                                                                  self.movieSearchBar.frame.size.width,
+                                                                  self.movieSearchBar.frame.size.height)];
+                         [self.moviesListCollectionView setFrame:CGRectMake(self.moviesListCollectionView.frame.origin.x,
+                                                                            0.0,
+                                                                            self.moviesListCollectionView.frame.size.width,
+                                                                            self.moviesListCollectionView.frame.size.height)];
+                     } completion:^(BOOL finished) {
+                         self.movieSearchBar.hidden = YES;
+                     }];
 }
 
 #pragma mark- Movie Search
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
+    if (searchText.length != 0) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"movieName contains[c] %@",searchText];
+        self.filteredMovieListCollection = [self.movieListCollection filteredArrayUsingPredicate:predicate];
+    } else {
+        self.filteredMovieListCollection = self.movieListCollection;
+    }
+    [self.moviesListCollectionView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self hideMovieSearchBarWithAnimation:YES];
+    [searchBar resignFirstResponder];
 }
 
 @end

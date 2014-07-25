@@ -60,7 +60,10 @@
 
 - (HSMoviesListViewController *)configureListViewController {
     UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"HSNavigationController"];
-    
+    [navController.view setBackgroundColor:[UIColor colorWithRed:240.0/255.0
+                                                           green:176.0/255.0
+                                                            blue:23.0/255.0
+                                                           alpha:1.0]];
     self.window.rootViewController = navController;
     self.listViewController = (HSMoviesListViewController *)[navController topViewController];
     HSMoviesListInteractor *interactor = [[HSMoviesListInteractor alloc] init];
