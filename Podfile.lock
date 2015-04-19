@@ -1,11 +1,11 @@
 PODS:
   - AFNetworking (2.3.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
+    - AFNetworking/NSURLConnection (= 2.3.1)
+    - AFNetworking/NSURLSession (= 2.3.1)
+    - AFNetworking/Reachability (= 2.3.1)
+    - AFNetworking/Security (= 2.3.1)
+    - AFNetworking/Serialization (= 2.3.1)
+    - AFNetworking/UIKit (= 2.3.1)
   - AFNetworking/NSURLConnection (2.3.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -27,12 +27,12 @@ PODS:
   - GoogleAnalytics-iOS-SDK (3.0.8)
   - HockeySDK (3.5.2)
   - MagicalRecord (2.2):
-    - MagicalRecord/Core
+    - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
   - MaryPopin (1.4.1)
   - MBProgressHUD (0.8)
   - MMRecord (1.4.1):
-    - MMRecord/Core
+    - MMRecord/Core (= 1.4.1)
   - MMRecord/Core (1.4.1)
 
 DEPENDENCIES:
@@ -47,15 +47,15 @@ DEPENDENCIES:
   - MMRecord (~> 1.4.1)
 
 SPEC CHECKSUMS:
-  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
-  Bolts: 91c2af8eae1d44e1dd75946a5b0ae04a43ea43e4
-  Facebook-iOS-SDK: 34eef640c2cc4c8618ba0f574ad2b290e07f1b4e
-  FlurrySDK: aca93e0d48e78d8236b03e0ddd0c1a2a564ead3b
-  GoogleAnalytics-iOS-SDK: a3206c68ee5f2a014ed67383d1f779072b653988
-  HockeySDK: a971bdf56c4e549c05d76aa9283fcfc9f6ecaea3
-  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
-  MaryPopin: f460c3040dbd2a18f730538f03c7dd1714fa0931
-  MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
-  MMRecord: d97ae01093878067aff85dcbd90fb700605cc634
+  AFNetworking: 05b9f6e3aa5ac45bc383b4bb108ef338080a26c7
+  Bolts: cbf2e714ee805a2a2c1fced24c6e3aae9fbc396e
+  Facebook-iOS-SDK: 8b1e1af601f865f29973f750805d25724533e686
+  FlurrySDK: 55b8e4c3124365f1ae0b9d5b12e936a0a864951d
+  GoogleAnalytics-iOS-SDK: 6cf9ebbd7654bd7caf8530b80d7b9a4f4cdcc841
+  HockeySDK: e0a43a1fd27b2bbb25a9ed546ed92836dee44e66
+  MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
+  MaryPopin: 699380fda0b7bd4f3f6e82d30520c6eb1b08af71
+  MBProgressHUD: 8688c331cb64702283be37ab8d7d329cdd25f251
+  MMRecord: 1acac5fd8beeae77d7ecd8b4c9714731dd64751a
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.36.4

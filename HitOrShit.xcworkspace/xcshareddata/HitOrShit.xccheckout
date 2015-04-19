@@ -10,29 +10,29 @@
 	<string>HitOrShit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>38A7F85B-16EA-4C50-92C0-0A2FDC9D012B</key>
+		<key>93F45DBEA6BC6B6622B108C308679B91E5B924BF</key>
 		<string>https://github.com/SunnyGit/HitOrShit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>HitOrShit.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>38A7F85B-16EA-4C50-92C0-0A2FDC9D012B</key>
+		<key>93F45DBEA6BC6B6622B108C308679B91E5B924BF</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/SunnyGit/HitOrShit.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>38A7F85B-16EA-4C50-92C0-0A2FDC9D012B</string>
+	<string>93F45DBEA6BC6B6622B108C308679B91E5B924BF</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>38A7F85B-16EA-4C50-92C0-0A2FDC9D012B</string>
+			<string>93F45DBEA6BC6B6622B108C308679B91E5B924BF</string>
 			<key>IDESourceControlWCCName</key>
 			<string>HitOrShit</string>
 		</dict>

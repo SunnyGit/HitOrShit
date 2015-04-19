@@ -158,7 +158,6 @@
 		915FDD4D1969CF4000B8F173 /* HSLiveServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLiveServer.m; sourceTree = "<group>"; };
 		9196384C1982FFB400277385 /* HSMovieReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieReviewViewController.h; sourceTree = "<group>"; };
 		9196384D1982FFB400277385 /* HSMovieReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieReviewViewController.m; sourceTree = "<group>"; };
-		919B4A7C8F9B4C16A2C783A8 /* Pods-HitOrShit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitOrShit.xcconfig"; path = "Pods/Pods-HitOrShit.xcconfig"; sourceTree = "<group>"; };
 		91B9862419780D6800E4D580 /* HOSReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOSReview.h; sourceTree = "<group>"; };
 		91B9862519780D6900E4D580 /* HOSReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOSReview.m; sourceTree = "<group>"; };
 		91B9862719780D7200E4D580 /* _HOSReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _HOSReview.h; sourceTree = "<group>"; };
@@ -173,6 +172,8 @@
 		91C2560419784C5700C10D1D /* HSMovieDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailHeaderView.m; sourceTree = "<group>"; };
 		91C256071978576F00C10D1D /* HSMovieDetailHeaderViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMovieDetailHeaderViewData.h; sourceTree = "<group>"; };
 		91C256081978576F00C10D1D /* HSMovieDetailHeaderViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMovieDetailHeaderViewData.m; sourceTree = "<group>"; };
+		AE996EC99F788A1A01E40FFB /* Pods-HitOrShit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitOrShit.release.xcconfig"; path = "Pods/Target Support Files/Pods-HitOrShit/Pods-HitOrShit.release.xcconfig"; sourceTree = "<group>"; };
+		D0B73EACF38193BC58A7F779 /* Pods-HitOrShit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitOrShit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HitOrShit/Pods-HitOrShit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +208,7 @@
 				4834316F194C7838002CD868 /* HitOrShitTests */,
 				48343143194C7838002CD868 /* Frameworks */,
 				48343142194C7838002CD868 /* Products */,
-				919B4A7C8F9B4C16A2C783A8 /* Pods-HitOrShit.xcconfig */,
+				F65A11DFD458861DEF4F93FF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -446,6 +447,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F65A11DFD458861DEF4F93FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0B73EACF38193BC58A7F779 /* Pods-HitOrShit.debug.xcconfig */,
+				AE996EC99F788A1A01E40FFB /* Pods-HitOrShit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -497,7 +507,7 @@
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
 					48343140194C7838002CD868 = {
-						DevelopmentTeam = 4FGQMH8WW3;
+						DevelopmentTeam = C5E2CGM75T;
 					};
 					48343167194C7838002CD868 = {
 						TestTargetID = 48343140194C7838002CD868;
@@ -591,7 +601,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-HitOrShit-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HitOrShit/Pods-HitOrShit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -766,15 +776,16 @@
 		};
 		4834317A194C7838002CD868 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 919B4A7C8F9B4C16A2C783A8 /* Pods-HitOrShit.xcconfig */;
+			baseConfigurationReference = D0B73EACF38193BC58A7F779 /* Pods-HitOrShit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: sunil gandham (VM5A29994P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sunil gandham (VM5A29994P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HitOrShit/HitOrShit-Prefix.pch";
 				INFOPLIST_FILE = "HitOrShit/HitOrShit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -783,15 +794,16 @@
 		};
 		4834317B194C7838002CD868 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 919B4A7C8F9B4C16A2C783A8 /* Pods-HitOrShit.xcconfig */;
+			baseConfigurationReference = AE996EC99F788A1A01E40FFB /* Pods-HitOrShit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: sunil gandham (VM5A29994P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sunil gandham (VM5A29994P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HitOrShit/HitOrShit-Prefix.pch";
 				INFOPLIST_FILE = "HitOrShit/HitOrShit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
